@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Entities/Pickups/Waypoint/Waypoint.gd" type="Script" id=1]
+[ext_resource path="res://Entities/Pickups/Waypoint/Waypoint.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Characters/Player/PlayerSprite.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 0.486364 ), 0.0, 0.079665, 0, 0, Vector2( 0.612613, 0.422727 ), -0.516852, -0.516852, 0, 0, Vector2( 1, 0 ), -1.51364, 0.0, 0, 0 ]
+
+[sub_resource type="Curve" id=3]
+min_value = -1.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Waypoint" type="Node2D"]
+position = Vector2( 512, 384 )
+script = ExtResource( 1 )
+color = Color( 0.137255, 0.937255, 0.470588, 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Sprites" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Sprite" type="Sprite" parent="Sprites"]
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="Sprites"]
+rotation = 0.785398
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="WaypointParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 48
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource( 3 )
+emission_shape = 2
+emission_rect_extents = Vector2( 16, 16 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 1.0
+angular_velocity = 250.0
+angular_velocity_random = 1.0
+orbit_velocity_random = 1.0
+scale_amount = 0.0
+scale_amount_random = 0.25
+scale_amount_curve = SubResource( 2 )
+color = Color( 0.137255, 0.937255, 0.470588, 1 )
+hue_variation_curve = SubResource( 3 )
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

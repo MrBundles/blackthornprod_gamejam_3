@@ -1,5 +1,8 @@
 extends TileMap
 
+#variables
+var active = false setget set_active
+
 
 func _ready():
 	for tile_id in get_used_cells():
@@ -9,3 +12,12 @@ func _ready():
 		$LevelTiles.add_child(tile_instance)
 	
 	clear()
+
+
+func _process(delta):
+	active
+
+
+func set_active(new_val):
+	if active != new_val:
+		active = new_val

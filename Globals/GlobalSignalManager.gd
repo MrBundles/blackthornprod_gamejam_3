@@ -1,6 +1,14 @@
 extends Node
 
 #signals
-signal update_label #to be deleted, used for dev
-signal dig_tile
 signal flip_world
+signal despawn_player
+signal waypoint_collected
+signal all_waypoints_collected
+
+#menu button signals
+signal to_level_select
+signal to_settings
+signal to_credits
+signal to_main_menu
+signal to_quit
