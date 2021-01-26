@@ -19,10 +19,15 @@ config/name="Btp Gj 3"
 run/main_scene="res://Scenes/GameScenes/GameScene_XX.tscn"
 config/icon="res://icon.png"
 
+[audio]
+
+output_latency.web=20
+
 [autoload]
 
 GlobalColorManager="*res://Globals/GlobalColorManager.tscn"
 GlobalSignalManager="*res://Globals/GlobalSignalManager.tscn"
+GlobalVariableManager="*res://Globals/GlobalVariableManager.tscn"
 
 [display]
 
