@@ -69,9 +69,10 @@ func player_in_range(player_pos):
 
 func get_input():
 	if tile_state == GlobalVariableManager.TILE_STATES.Active and mouse_present and player_present:
-		if Input.is_action_just_pressed("mouse_left_click"):
+		if Input.is_action_just_pressed("mouse_left_click") and GlobalVariableManager.player_dig_count > 0:
 			self.tile_state = GlobalVariableManager.TILE_STATES.Inactive
 			$BreakParticles.emitting = true
+			GlobalSignalManager.emit_signal("dig_tile")
 		
 		if Input.is_action_just_pressed("mouse_right_click"):
 			GlobalSignalManager.emit_signal("flip_world", global_position + offset)

@@ -1,5 +1,7 @@
 tool
 extends Button
+class_name MyMenuButton
+
 
 #variables
 var button_size = Vector2(64,64) setget set_button_size

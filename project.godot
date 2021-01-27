@@ -8,15 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Button",
+"class": "MyMenuButton",
+"language": "GDScript",
+"path": "res://Menus/Menubutton/MenuButton.gd"
+} ]
 _global_script_class_icons={
-
+"MyMenuButton": ""
 }
 
 [application]
 
 config/name="Btp Gj 3"
-run/main_scene="res://Scenes/GameScenes/GameScene_XX.tscn"
+run/main_scene="res://Scenes/SceneManager.tscn"
 config/icon="res://icon.png"
 
 [audio]

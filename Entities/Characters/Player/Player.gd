@@ -2,7 +2,9 @@ extends KinematicBody2D
 
 #variables
 export var color_player = Color8(0,0,0,255)
+export var color_pause = Color8(255,255,255,255)
 export var dig_count = 0
+var init_dig_count
 
 var velocity = Vector2(0,0)
 export var velocity_transition = Vector2(-1000,0)
@@ -18,19 +20,24 @@ var init_position = Vector2(0,0)
 
 var flipped = 1		#1 = not flipped, -1 = flipped
 var all_waypoints_collected = false
+var mouse_present = false
 
 func _ready():
 	#connect signals
 	GlobalSignalManager.connect("flip_world", self, "_on_flip_world")
+	GlobalSignalManager.connect("dig_tile", self, "_on_dig_tile")
 	GlobalSignalManager.connect("despawn_player", self, "spawn")
 	GlobalSignalManager.connect("all_waypoints_collected", self, "_on_all_waypoints_collected")
 	
 	init_position = global_position
 	init_gravity = gravity
+	init_dig_count = dig_count
 	
 	$PlayerSprite.modulate = color_player
 	$CPUParticles2D.color = color_player
+	$PauseLabel.modulate = Color8(255,255,255,0)
 	spawn(GlobalVariableManager.DESPAWN_CONDITIONS.Init)
+	dig_count_check()
 
 
 func spawn(despawn_condition):
@@ -43,6 +50,7 @@ func spawn(despawn_condition):
 	gravity = 0
 	velocity = Vector2.ZERO
 	$CPUParticles2D.emitting = true
+	dig_count = init_dig_count
 	
 	var tween_duration = .5
 	var tween_delay = 1.0
@@ -97,7 +105,12 @@ func _on_all_waypoints_collected():
 
 func _process(delta):
 	GlobalVariableManager.player_position = global_position
+	GlobalVariableManager.player_dig_count = dig_count
 	$CPUParticles2D.global_position = init_position
+	
+	$DigCountLabel.rect_rotation = $PlayerSprite.rotation_degrees
+	$DigCountLabel.rect_scale = $PlayerSprite.scale
+	$DigCountLabel.text = str(dig_count).pad_zeros(2)
 
 
 func _on_flip_world(flip_tile_pos):
@@ -131,6 +144,16 @@ func _on_flip_world(flip_tile_pos):
 	velocity = velocity_transition.rotated(previous_pos.angle_to_point(flip_tile_pos))
 
 
+func _on_dig_tile():
+	dig_count -= 1
+	dig_count_check()
+
+
+
+func dig_count_check():
+	$DigCountLabel.visible = dig_count > 0
+
+
 func _physics_process(delta):
 	get_input()
 	move_and_slide(velocity * delta, Vector2.UP)
@@ -138,6 +161,10 @@ func _physics_process(delta):
 
 func get_input():
 	if not $Tween.is_active():
+		#if mouse is not present, return to non-paused state
+		if (velocity != Vector2(0,0)) and !mouse_in_area(get_global_mouse_position()):
+			_on_Area2D_mouse_exited()
+		
 		if Input.is_action_pressed("move_left"):		#move to the left
 			velocity.x = clamp(velocity.x - haccel, -velocity_max.x, velocity_max.x)
 		elif Input.is_action_pressed("move_right"):		#move to the right
@@ -153,7 +180,7 @@ func get_input():
 				if velocity.y == 0:
 					#snap player to grid if close to cell position
 					var global_position_map = $PlayerTileMap.map_to_world($PlayerTileMap.world_to_map(global_position))
-					var min_distance_to_snap = 12
+					var min_distance_to_snap = 16
 					if abs(global_position.x - global_position_map.x - 32) < min_distance_to_snap:
 						global_position.x = global_position_map.x + 32
 		
@@ -189,8 +216,17 @@ func get_input():
 		if not Input.is_action_pressed("move_up"):
 			jump_flag = false
 		
-		if Input.is_action_just_released("restart_level"):
-			get_tree().reload_current_scene()
+	if Input.is_action_just_released("restart_level"):
+		get_tree().reload_current_scene()
+	
+	if Input.is_action_just_pressed("mouse_left_click") and mouse_present:
+		print(mouse_present)
+		GlobalSignalManager.emit_signal("pause_scene")
+
+
+func mouse_in_area(mouse_pos):
+	return mouse_pos.x > global_position.x - 32 and mouse_pos.x < global_position.x + 32 and mouse_pos.y > global_position.y - 32 and mouse_pos.y < global_position.y + 32
+
 
 
 func _on_Area2D_body_entered(body):
@@ -199,3 +235,48 @@ func _on_Area2D_body_entered(body):
 			despawn(GlobalVariableManager.DESPAWN_CONDITIONS.Bad)
 		if body.tile_state == GlobalVariableManager.TILE_STATES.Good and all_waypoints_collected:
 			despawn(GlobalVariableManager.DESPAWN_CONDITIONS.Good)
+
+
+func _on_Area2D_mouse_entered():
+	if velocity == Vector2(0,0):
+		mouse_present = true
+		$PauseTween.stop_all()
+		var tween_duration = .5
+		var tween_transition = Tween.TRANS_QUINT
+		var tween_easing = Tween.EASE_OUT
+		
+		$PauseTween.interpolate_property($PlayerSprite, "scale", $PlayerSprite.scale, Vector2(1.5,1.5), 
+		tween_duration, tween_transition, tween_easing)
+		
+		$PauseTween.interpolate_property($PlayerSprite, "modulate", $PlayerSprite.modulate, color_pause, 
+		tween_duration, tween_transition, tween_easing)
+		
+		$PauseTween.interpolate_property($DigCountLabel, "modulate", $DigCountLabel.modulate, Color8(255,255,255,0), 
+		tween_duration, tween_transition, tween_easing)
+		
+		$PauseTween.interpolate_property($PauseLabel, "modulate", $PauseLabel.modulate, Color8(255,255,255,255), 
+		tween_duration, tween_transition, tween_easing)
+		
+		$PauseTween.start()
+
+
+func _on_Area2D_mouse_exited():
+	mouse_present = false
+	$PauseTween.stop_all()
+	var tween_duration = .25
+	var tween_transition = Tween.TRANS_QUINT
+	var tween_easing = Tween.EASE_OUT
+	
+	$PauseTween.interpolate_property($PlayerSprite, "scale", $PlayerSprite.scale, Vector2(1,1), 
+	tween_duration, tween_transition, tween_easing)
+	
+	$PauseTween.interpolate_property($PlayerSprite, "modulate", $PlayerSprite.modulate, color_player, 
+	tween_duration, tween_transition, tween_easing)
+	
+	$PauseTween.interpolate_property($DigCountLabel, "modulate", $DigCountLabel.modulate, Color8(255,255,255,255), 
+	tween_duration, tween_transition, tween_easing)
+	
+	$PauseTween.interpolate_property($PauseLabel, "modulate", $PauseLabel.modulate, Color8(255,255,255,0), 
+	tween_duration, tween_transition, tween_easing)
+	
+	$PauseTween.start()

@@ -10,4 +10,5 @@ var tween_transition = Tween.TRANS_EXPO
 var tween_easing = Tween.EASE_IN
 
 var player_position = Vector2(0,0)
+var player_dig_count = 0
 var dig_count = 0
