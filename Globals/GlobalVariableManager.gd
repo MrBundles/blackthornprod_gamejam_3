@@ -2,7 +2,7 @@ extends Node
 
 #enums
 enum TILE_STATES {Active, Solid, Inactive, Bad, Good}
-enum DESPAWN_CONDITIONS {Init, Bad, Good, Teleport}
+enum DESPAWN_CONDITIONS {Init, Bad, Good, Teleport, Restart}
 
 #world flip tween values
 var tween_duration = .5

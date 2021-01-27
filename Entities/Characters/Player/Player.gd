@@ -57,7 +57,7 @@ func spawn(despawn_condition):
 		dig_count = init_dig_count
 		
 		var tween_duration = .5
-		var tween_delay = 1.0
+		var tween_delay = 0.0
 		
 		$Tween.interpolate_property($PlayerSprite, "scale", $PlayerSprite.scale, Vector2(1,1),
 		tween_duration, Tween.TRANS_BACK, Tween.EASE_OUT, tween_delay
@@ -232,7 +232,7 @@ func get_input():
 			jump_flag = false
 		
 	if Input.is_action_just_released("restart_level"):
-		get_tree().reload_current_scene()
+		despawn(GlobalVariableManager.DESPAWN_CONDITIONS.Restart)
 	
 	if Input.is_action_just_pressed("mouse_left_click") and mouse_present:
 		print(mouse_present)

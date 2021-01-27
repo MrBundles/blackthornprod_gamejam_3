@@ -34,11 +34,11 @@ rect_min_size = Vector2( 20, 0 )
 
 [node name="Title" type="Label" parent="VBoxContainer/HBoxContainer2"]
 margin_left = 24.0
-margin_right = 91.0
+margin_right = 77.0
 margin_bottom = 112.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.937255, 0.137255, 0.235294, 1 )
-text = "02"
+text = "01"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
