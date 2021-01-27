@@ -22,6 +22,8 @@ func _ready():
 	GlobalSignalManager.connect("despawn_player", self, "_on_despawn_player")
 	GlobalSignalManager.connect("all_waypoints_collected", self, "_on_all_waypoints_collected")
 	
+	$BorderSprite.modulate = color_array[2]
+	
 	self.tile_state = tile_state
 	init_tile_state = tile_state
 	self.mouse_present = mouse_present
@@ -68,7 +70,7 @@ func player_in_range(player_pos):
 
 
 func get_input():
-	if tile_state == GlobalVariableManager.TILE_STATES.Active and mouse_present and player_present:
+	if tile_state == GlobalVariableManager.TILE_STATES.Active and mouse_present and player_present and GlobalVariableManager.allow_tile_click:
 		if Input.is_action_just_pressed("mouse_left_click") and GlobalVariableManager.player_dig_count > 0:
 			self.tile_state = GlobalVariableManager.TILE_STATES.Inactive
 			$BreakParticles.emitting = true
@@ -101,11 +103,6 @@ func set_mouse_present(new_val):
 	if mouse_present != new_val:
 		mouse_present = new_val
 		
-		if mouse_present:
-			$BorderSprite.modulate = color_array[2]
-		else:
-			$BorderSprite.modulate = color_array[2]
-		
 		$Tween.stop_all()
 		
 		if player_present:
@@ -127,7 +124,7 @@ func set_mouse_present(new_val):
 
 
 func set_player_present(new_val):
-	if player_present != new_val and tile_state == GlobalVariableManager.TILE_STATES.Active:
+	if player_present != new_val and tile_state == GlobalVariableManager.TILE_STATES.Active and GlobalVariableManager.allow_tile_click:
 		player_present = new_val
 	
 		$Tween.stop_all()

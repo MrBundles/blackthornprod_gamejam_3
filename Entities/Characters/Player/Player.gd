@@ -5,6 +5,7 @@ export var color_player = Color8(0,0,0,255)
 export var color_pause = Color8(255,255,255,255)
 export var dig_count = 0
 var init_dig_count
+export var allow_tile_click = true
 
 var velocity = Vector2(0,0)
 export var velocity_transition = Vector2(-1000,0)
@@ -28,50 +29,55 @@ func _ready():
 	GlobalSignalManager.connect("dig_tile", self, "_on_dig_tile")
 	GlobalSignalManager.connect("despawn_player", self, "spawn")
 	GlobalSignalManager.connect("all_waypoints_collected", self, "_on_all_waypoints_collected")
+	GlobalSignalManager.connect("level_in_place", self, "_on_level_in_place")
 	
-	init_position = global_position
 	init_gravity = gravity
+	gravity = 0
 	init_dig_count = dig_count
 	
 	$PlayerSprite.modulate = color_player
 	$CPUParticles2D.color = color_player
+	$PlayerSprite.scale = Vector2(0,0)
+	$CPUParticles2D.scale = Vector2(0,0)
 	$PauseLabel.modulate = Color8(255,255,255,0)
-	spawn(GlobalVariableManager.DESPAWN_CONDITIONS.Init)
-	dig_count_check()
+	
 
 
 func spawn(despawn_condition):
-	self.flipped = 1
-	set_collision_layer_bit(0, false)
-	set_collision_mask_bit(0, false)
-	global_position = init_position
-	$PlayerSprite.scale = Vector2(0,0)
-	$CPUParticles2D.scale = Vector2(0,0)
-	gravity = 0
-	velocity = Vector2.ZERO
-	$CPUParticles2D.emitting = true
-	dig_count = init_dig_count
-	
-	var tween_duration = .5
-	var tween_delay = 1.0
-	
-	$Tween.interpolate_property($PlayerSprite, "scale", $PlayerSprite.scale, Vector2(1,1),
-	tween_duration, Tween.TRANS_BACK, Tween.EASE_OUT, tween_delay
-	)
-	$Tween.interpolate_property($PlayerSprite, "rotation_degrees", -360, 0,
-	tween_duration, Tween.TRANS_BACK, Tween.EASE_OUT, tween_delay
-	)
-	$Tween.interpolate_property($CPUParticles2D, "scale", $CPUParticles2D.scale, Vector2(1,1),
-	tween_duration, Tween.TRANS_BACK, Tween.EASE_OUT, tween_delay
-	)
+	if despawn_condition != GlobalVariableManager.DESPAWN_CONDITIONS.Good:
+		self.flipped = 1
+		set_collision_layer_bit(0, false)
+		set_collision_mask_bit(0, false)
+		global_position = init_position
+		$PlayerSprite.scale = Vector2(0,0)
+		$CPUParticles2D.scale = Vector2(0,0)
+		gravity = 0
+		velocity = Vector2.ZERO
+		$CPUParticles2D.emitting = true
+		dig_count = init_dig_count
+		
+		var tween_duration = .5
+		var tween_delay = 1.0
+		
+		$Tween.interpolate_property($PlayerSprite, "scale", $PlayerSprite.scale, Vector2(1,1),
+		tween_duration, Tween.TRANS_BACK, Tween.EASE_OUT, tween_delay
+		)
+		$Tween.interpolate_property($PlayerSprite, "rotation_degrees", -360, 0,
+		tween_duration, Tween.TRANS_BACK, Tween.EASE_OUT, tween_delay
+		)
+		$Tween.interpolate_property($CPUParticles2D, "scale", $CPUParticles2D.scale, Vector2(1,1),
+		tween_duration, Tween.TRANS_BACK, Tween.EASE_OUT, tween_delay
+		)
 
-	$Tween.start()
-	
-	yield($Tween, "tween_all_completed")
-	$CPUParticles2D.emitting = false
-	set_collision_layer_bit(0, true)
-	set_collision_mask_bit(0, true)
-	gravity = init_gravity
+		$Tween.start()
+		
+		yield($Tween, "tween_all_completed")
+		$CPUParticles2D.emitting = false
+		set_collision_layer_bit(0, true)
+		set_collision_mask_bit(0, true)
+		gravity = init_gravity
+	else:
+		queue_free()
 
 
 func despawn(despawn_condition):
@@ -103,9 +109,18 @@ func _on_all_waypoints_collected():
 	all_waypoints_collected = true
 
 
+func _on_level_in_place():
+	init_position = global_position
+	gravity = init_gravity
+	
+	spawn(GlobalVariableManager.DESPAWN_CONDITIONS.Init)
+	dig_count_check()
+
+
 func _process(delta):
 	GlobalVariableManager.player_position = global_position
 	GlobalVariableManager.player_dig_count = dig_count
+	GlobalVariableManager.allow_tile_click = allow_tile_click
 	$CPUParticles2D.global_position = init_position
 	
 	$DigCountLabel.rect_rotation = $PlayerSprite.rotation_degrees
@@ -238,7 +253,7 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_Area2D_mouse_entered():
-	if velocity == Vector2(0,0):
+	if velocity == Vector2(0,0) and not $Tween.is_active():
 		mouse_present = true
 		$PauseTween.stop_all()
 		var tween_duration = .5

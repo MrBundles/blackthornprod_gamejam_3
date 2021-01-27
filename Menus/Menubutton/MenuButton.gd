@@ -38,15 +38,17 @@ func set_button_size(new_val):
 
 
 func _on_MenuButton_mouse_entered():
-	$Tween.interpolate_property($BorderSprite, "scale", $BorderSprite.scale, button_scale_border_grow,
-	.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
-	$Tween.start()
+	if not disabled:
+		$Tween.interpolate_property($BorderSprite, "scale", $BorderSprite.scale, button_scale_border_grow,
+		.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+		$Tween.start()
 
 
 func _on_MenuButton_mouse_exited():
-	$Tween.interpolate_property($BorderSprite, "scale", $BorderSprite.scale, button_scale_border,
-	.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
-	$Tween.start()
+	if not disabled:
+		$Tween.interpolate_property($BorderSprite, "scale", $BorderSprite.scale, button_scale_border,
+		.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
+		$Tween.start()
 
 
 func _on_MenuButton_button_down():

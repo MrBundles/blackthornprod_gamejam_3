@@ -9,6 +9,10 @@ func _ready():
 	self.level_id = level_id
 
 
+func _process(delta):
+	disabled = GlobalVariableManager.highest_unlocked_level_id < level_id
+
+
 func set_level_id(new_val):
 	level_id = new_val
 	

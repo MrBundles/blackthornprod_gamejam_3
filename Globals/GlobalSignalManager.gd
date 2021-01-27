@@ -6,6 +6,7 @@ signal dig_tile
 signal despawn_player
 signal waypoint_collected
 signal all_waypoints_collected
+signal level_in_place
 
 #menu button signals
 signal to_level_select
@@ -17,3 +18,8 @@ signal to_level
 
 #ui signals
 signal pause_scene
+signal resume_scene
+
+#audio signals
+signal change_bus_mute
+signal change_bus_volume

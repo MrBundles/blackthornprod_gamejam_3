@@ -24,7 +24,7 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 "tile",
 ]]
 script = ExtResource( 1 )
-color_array = [ Color( 0.168627, 0.176471, 0.258824, 1 ), Color( 0.552941, 0.6, 0.682353, 1 ), Color( 0.929412, 0.94902, 0.956863, 1 ), Color( 0.937255, 0.137255, 0.235294, 1 ), Color( 0.137255, 0.937255, 0.470588, 1 ) ]
+color_array = [ Color( 0.168627, 0.176471, 0.258824, 1 ), Color( 0.552941, 0.6, 0.682353, 1 ), Color( 0.929412, 0.94902, 0.956863, 0 ), Color( 0.937255, 0.137255, 0.235294, 1 ), Color( 0.137255, 0.937255, 0.470588, 1 ) ]
 delay_curve = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -46,16 +46,17 @@ texture = ExtResource( 2 )
 position = Vector2( 32, 32 )
 emitting = false
 amount = 28
-lifetime = 0.15
+lifetime = 0.5
 one_shot = true
+explosiveness = 1.0
 texture = ExtResource( 3 )
 emission_shape = 2
 emission_rect_extents = Vector2( 21, 21 )
 spread = 180.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 150.0
+initial_velocity = 100.0
 initial_velocity_random = 1.0
-angular_velocity = 150.0
+angular_velocity = 200.0
 angular_velocity_random = 1.0
 scale_amount = 0.0
 scale_amount_random = 0.5

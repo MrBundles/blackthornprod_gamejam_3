@@ -12,3 +12,7 @@ var tween_easing = Tween.EASE_IN
 var player_position = Vector2(0,0)
 var player_dig_count = 0
 var dig_count = 0
+var allow_tile_click = true
+
+var current_level_id
+var highest_unlocked_level_id

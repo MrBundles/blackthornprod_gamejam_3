@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/screen-saver-by-kevin-macleod-from-filmmusic-io.ogg-a5ce8f1e9f7dba61a650045b8c974e93.oggstr"
+
+[deps]
+
+source_file="res://Resources/Audio/Music/screen-saver-by-kevin-macleod-from-filmmusic-io.ogg"
+dest_files=[ "res://.import/screen-saver-by-kevin-macleod-from-filmmusic-io.ogg-a5ce8f1e9f7dba61a650045b8c974e93.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

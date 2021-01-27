@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Menus/Settings/VolumeSlider.gd" type="Script" id=1]
+[ext_resource path="res://Menus/Menubutton/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resources/Fonts/agencyfb-boldcondensed.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Menus/Settings/SliderGrabber.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 72
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0.168627, 0.176471, 0.258824, 1 )
+expand_margin_top = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 3 )
+
+[node name="VolumeSlider" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1158.0
+margin_bottom = -1026.0
+size_flags_horizontal = 3
+custom_constants/separation = 25
+alignment = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+label = "Music Volume"
+color_grabber = Color( 0.168627, 0.176471, 0.258824, 1 )
+
+[node name="VolumeLabel" type="Label" parent="."]
+margin_right = 300.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 300, 0 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.168627, 0.176471, 0.258824, 1 )
+text = "Music Volume"
+align = 1
+valign = 1
+
+[node name="VolumeSlider" type="HSlider" parent="."]
+margin_left = 325.0
+margin_right = 637.0
+margin_bottom = 81.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_icons/grabber_disabled = ExtResource( 4 )
+custom_icons/grabber_highlight = ExtResource( 4 )
+custom_icons/grabber = ExtResource( 4 )
+custom_styles/slider = SubResource( 3 )
+min_value = -60.0
+max_value = 0.0
+step = 5.0
+
+[node name="MuteButton" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 662.0
+margin_top = 0.0
+margin_right = 762.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 100, 0 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_pressed = Color( 0.168627, 0.176471, 0.258824, 1 )
+toggle_mode = true
+text = "Mute"
+[connection signal="value_changed" from="VolumeSlider" to="." method="_on_VolumeSlider_value_changed"]
+[connection signal="toggled" from="MuteButton" to="." method="_on_MuteButton_toggled"]

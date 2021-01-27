@@ -33,6 +33,7 @@ output_latency.web=20
 GlobalColorManager="*res://Globals/GlobalColorManager.tscn"
 GlobalSignalManager="*res://Globals/GlobalSignalManager.tscn"
 GlobalVariableManager="*res://Globals/GlobalVariableManager.tscn"
+GlobalAudioManager="*res://Globals/GlobalAudioManager.tscn"
 
 [display]
 

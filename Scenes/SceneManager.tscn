@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Menus/MainMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/SceneManager.gd" type="Script" id=2]
@@ -7,21 +7,35 @@
 [ext_resource path="res://Scenes/GameScenes/GameScene_00.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Menus/SettingsMenu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Menus/CreditsMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Menus/EmptyMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/GameScenes/GameScene_BG.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/GameScenes/GameScene_02.tscn" type="PackedScene" id=11]
 
 [node name="SceneManager" type="Node2D"]
+pause_mode = 2
 script = ExtResource( 2 )
-game_scene_array = [ ExtResource( 5 ), ExtResource( 3 ) ]
+game_scene_array = [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 11 ) ]
 menu_level_select = ExtResource( 4 )
 menu_settings = ExtResource( 6 )
 menu_credits = ExtResource( 7 )
 menu_main_menu = ExtResource( 1 )
+menu_pause = ExtResource( 8 )
+menu_empty = ExtResource( 9 )
 
-[node name="Tween" type="Tween" parent="."]
+[node name="Background" parent="." instance=ExtResource( 10 )]
+
+[node name="GameSceneTween" type="Tween" parent="."]
+
+[node name="MenuSceneTween" type="Tween" parent="."]
 
 [node name="GameScenes" type="Node2D" parent="."]
+pause_mode = 1
 
-[node name="GameScene" parent="GameScenes" instance=ExtResource( 5 )]
+[node name="GameScene_00" parent="GameScenes" instance=ExtResource( 5 )]
 
 [node name="MenuScenes" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 10
 
 [node name="MainMenu" parent="MenuScenes" instance=ExtResource( 1 )]
