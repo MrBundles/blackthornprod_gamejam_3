@@ -42,6 +42,7 @@ func _on_MenuButton_mouse_entered():
 		$Tween.interpolate_property($BorderSprite, "scale", $BorderSprite.scale, button_scale_border_grow,
 		.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 		$Tween.start()
+		$MenuButtonHoverOn.play()
 
 
 func _on_MenuButton_mouse_exited():
@@ -49,12 +50,14 @@ func _on_MenuButton_mouse_exited():
 		$Tween.interpolate_property($BorderSprite, "scale", $BorderSprite.scale, button_scale_border,
 		.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 		$Tween.start()
+		$MenuButtonHoverOff.play()
 
 
 func _on_MenuButton_button_down():
 	$Tween.interpolate_property($BorderSprite, "scale", $BorderSprite.scale, button_scale_border_click,
 	.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT)
 	$Tween.start()
+	$MenuButtonClick.play()
 
 
 func _on_MenuButton_button_up():
