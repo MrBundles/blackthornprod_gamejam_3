@@ -59,7 +59,7 @@ tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -6
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 512, 448 )
-allow_tile_click = false
+dig_count = 99
 velocity_transition = Vector2( -35000, 0 )
 velocity_max = Vector2( 40000, 75000 )
 haccel = 4500

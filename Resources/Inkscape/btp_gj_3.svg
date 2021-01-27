@@ -17,6 +17,7 @@
   <defs
      id="defs2" />
   <sodipodi:namedview
+     inkscape:snap-global="true"
      inkscape:object-nodes="false"
      inkscape:bbox-nodes="true"
      inkscape:bbox-paths="false"
@@ -30,9 +31,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="379.45214"
-     inkscape:cx="303.73091"
-     inkscape:zoom="1.979899"
+     inkscape:cy="-196.5919"
+     inkscape:cx="-571.785"
+     inkscape:zoom="0.70000001"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -62,6 +63,22 @@
      id="layer1"
      inkscape:groupmode="layer"
      inkscape:label="Layer 1">
+    <rect
+       style="fill:#edf2f4;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect907"
+       width="166.6875"
+       height="66.145836"
+       x="-321.73334"
+       y="-67.73333"
+       ry="7.9085606e-07" />
+    <rect
+       ry="7.9085606e-07"
+       y="-133.87917"
+       x="-321.73334"
+       height="66.145836"
+       width="166.6875"
+       id="rect905"
+       style="fill:#2b2d42;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
     <rect
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
@@ -116,7 +133,7 @@
        height="16.933332"
        width="16.933332"
        id="rect845"
-       style="fill:#23ef78;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.64583, 10.58329999999999949" />
+       style="fill:#23ef78;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.64583, 10.5833" />
     <rect
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
@@ -129,7 +146,7 @@
        id="rect849"
        style="fill:#ffffff;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.64583, 10.5833" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.64583, 10.58329999999999949"
+       style="fill:#ffffff;fill-opacity:1;stroke-width:2.64583;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:2.64583, 10.5833"
        id="rect851"
        width="16.933332"
        height="16.933332"
@@ -150,5 +167,32 @@
        width="15.610413"
        id="rect853"
        style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.32292;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    <text
+       id="text857"
+       y="-40.937016"
+       x="-284.64285"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:25.7347px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#2b2d42;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         id="tspan909"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:25.7347px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2b2d42;fill-opacity:1;stroke-width:0.264583"
+         y="-40.937016"
+         x="-284.64285"
+         sodipodi:role="line">A Game by </tspan><tspan
+         id="tspan913"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:25.7347px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2b2d42;fill-opacity:1;stroke-width:0.264583"
+         y="-8.7686405"
+         x="-284.64285"
+         sodipodi:role="line">MrBundles</tspan></text>
+    <text
+       id="text849"
+       y="-66.718056"
+       x="-278.6857"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:65.673px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#edf2f4;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:65.673px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#edf2f4;fill-opacity:1;stroke-width:0.264583"
+         y="-66.718056"
+         x="-278.6857"
+         id="tspan847"
+         sodipodi:role="line">FLP</tspan></text>
   </g>
 </svg>
