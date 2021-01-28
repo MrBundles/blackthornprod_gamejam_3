@@ -8,6 +8,7 @@ export var hardcore_color = Color8(255,255,255,255)
 func _process(delta):
 	$VBoxContainer/VBoxContainer/Label2.visible = GlobalVariableManager.speedrun_mode
 	$VBoxContainer/HBoxContainer2/HardcoreButton.visible = GlobalVariableManager.hardcore_mode_unlocked
+	$HardcoreHint.visible = not GlobalVariableManager.hardcore_mode_unlocked and GlobalVariableManager.speedrun_mode
 	
 	if GlobalVariableManager.hardcore_mode:
 		$VBoxContainer/VBoxContainer/Label2.modulate = hardcore_color

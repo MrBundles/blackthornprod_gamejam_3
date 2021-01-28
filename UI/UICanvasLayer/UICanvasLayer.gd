@@ -20,6 +20,8 @@ func _ready():
 func _on_despawn_player(despawn_condition):
 	if despawn_condition == GlobalVariableManager.DESPAWN_CONDITIONS.Good and active:
 		GlobalSignalManager.emit_signal("save_time", current_msec - init_msec)
+	
+	init_msec = OS.get_ticks_msec()
 
 
 func _process(delta):
