@@ -16,7 +16,7 @@ _data = [ Vector2( 0, 0 ), 0.0, 0.966233, 0, 0, Vector2( 0.609971, 0.736364 ), 2
 
 [sub_resource type="RectangleShape2D" id=2]
 resource_local_to_scene = true
-extents = Vector2( 32, 32 )
+extents = Vector2( 31, 31 )
 
 [sub_resource type="Curve" id=3]
 _data = [ Vector2( 0, 0.486364 ), 0.0, 0.079665, 0, 0, Vector2( 0.612613, 0.422727 ), -0.516852, -0.516852, 0, 0, Vector2( 1, 0 ), -1.51364, 0.0, 0, 0 ]

@@ -6,7 +6,7 @@
 [ext_resource path="res://Resources/Audio/Effects/WaypointPickup.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31, 31 )
+extents = Vector2( 30, 30 )
 
 [sub_resource type="Curve" id=2]
 _data = [ Vector2( 0, 0.486364 ), 0.0, 0.079665, 0, 0, Vector2( 0.612613, 0.422727 ), -0.516852, -0.516852, 0, 0, Vector2( 1, 0 ), -1.51364, 0.0, 0, 0 ]

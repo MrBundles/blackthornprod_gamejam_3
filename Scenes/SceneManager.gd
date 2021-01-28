@@ -35,6 +35,8 @@ func _ready():
 	#initialize speedrun time array
 	for i in range(game_scene_array.size()):
 		GlobalVariableManager.speedrun_times.append([900000])
+	GlobalVariableManager.speedrun_times[0][0] = 0
+	GlobalVariableManager.speedrun_times[16][0] = 0
 
 
 func _process(delta):

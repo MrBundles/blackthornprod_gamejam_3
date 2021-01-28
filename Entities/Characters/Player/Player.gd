@@ -64,7 +64,7 @@ func spawn(despawn_condition):
 		$CPUParticles2D.emitting = true
 		dig_count = init_dig_count
 		
-		var tween_duration = .5
+		var tween_duration = 1
 		var tween_delay = 0.0
 		
 		$Tween.interpolate_property($PlayerSprite, "scale", $PlayerSprite.scale, Vector2(1,1),
