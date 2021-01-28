@@ -20,6 +20,8 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+color = Color( 0.937255, 0.137255, 0.235294, 1 )
+hardcore_color = Color( 0.137255, 0.937255, 0.470588, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -53,7 +55,7 @@ margin_top = 171.0
 margin_right = 1166.0
 margin_bottom = 243.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.937255, 0.137255, 0.235294, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Sum of Best Times: 99:99.999"
 align = 1
 valign = 1
@@ -204,6 +206,7 @@ level_id = 16
 margin_top = 867.0
 margin_right = 1166.0
 margin_bottom = 948.0
+custom_constants/separation = 50
 alignment = 1
 
 [node name="BackButton" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 1 )]
@@ -211,10 +214,24 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 383.0
+margin_left = 158.0
 margin_top = 0.0
-margin_right = 783.0
+margin_right = 558.0
 margin_bottom = 81.0
 rect_min_size = Vector2( 400, 0 )
 text = "Back"
 signal_name = "to_main_menu"
+
+[node name="HardcoreButton" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 1 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 608.0
+margin_top = 0.0
+margin_right = 1008.0
+margin_bottom = 81.0
+rect_min_size = Vector2( 400, 0 )
+text = "Hardcore"
+color_border = Color( 0.137255, 0.937255, 0.470588, 1 )
+signal_name = "toggle_hardcore_mode"

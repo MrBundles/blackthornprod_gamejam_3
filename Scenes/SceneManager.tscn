@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Menus/MainMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/SceneManager.gd" type="Script" id=2]
@@ -27,11 +27,29 @@
 [ext_resource path="res://Scenes/GameScenes/GameScene_16.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/GameScenes/GameScene_13.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/GameScenes/GameScene_15.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_00.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_06.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_07.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_09.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_12.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_14.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_16.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_02.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_04.tscn" type="PackedScene" id=36]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_13.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_01.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_03.tscn" type="PackedScene" id=39]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_08.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_05.tscn" type="PackedScene" id=41]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_10.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_11.tscn" type="PackedScene" id=43]
+[ext_resource path="res://Scenes/HardcoreGameScenes/GameScene_15.tscn" type="PackedScene" id=44]
 
 [node name="SceneManager" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 2 )
 game_scene_array = [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 27 ), ExtResource( 25 ) ]
+hardcore_game_scene_array = [ ExtResource( 28 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 39 ), ExtResource( 36 ), ExtResource( 41 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 40 ), ExtResource( 31 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 34 ) ]
 menu_level_select = ExtResource( 4 )
 menu_settings = ExtResource( 6 )
 menu_credits = ExtResource( 7 )

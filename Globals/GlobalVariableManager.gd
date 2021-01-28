@@ -19,6 +19,12 @@ var allow_right_click = true
 
 var current_level_id
 var highest_unlocked_level_id
+var hardcore_highest_unlocked_level_id
 
 var speedrun_mode = false
 var speedrun_times = []
+var hardcore_speedrun_times = []
+var best_summed_time = 900000
+var hardcore_best_summed_time = 900000
+var hardcore_mode = false
+var hardcore_mode_unlocked = false

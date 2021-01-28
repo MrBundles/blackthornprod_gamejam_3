@@ -965,62 +965,68 @@
          x="-162.04935"
          y="258.16391"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:30.8019px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#edf2f4;fill-opacity:1;stroke-width:0.264583">  es</tspan></text>
-    <rect
-       ry="9.9718693e-07"
-       y="338.66666"
-       x="-440.26666"
-       height="32.072346"
-       width="254"
-       id="rect1026"
-       style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
-    <text
-       id="text1030"
-       y="363.43869"
-       x="-438.06503"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:28.2652px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#ef233c;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       xml:space="preserve"
-       transform="scale(0.99602388,1.003992)"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:28.2652px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ef233c;fill-opacity:1;stroke-width:0.264583"
-         y="363.43869"
-         x="-438.06503"
-         sodipodi:role="line"
-         id="tspan1028">The Downside</tspan></text>
-    <rect
-       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
-       id="rect1036"
-       width="113.77084"
-       height="32.072346"
-       x="-300.03751"
-       y="338.66666"
-       ry="9.9718693e-07" />
-    <rect
-       style="fill:#ef233c;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
-       id="rect1038"
-       width="5.2137094"
-       height="32.214939"
-       x="-302.56589"
-       y="338.66324"
-       ry="2.2071126e-06"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <text
+    <g
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
-       transform="scale(0.99602387,1.003992)"
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:15.3862px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#edf2f4;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="-293.63153"
-       y="358.02963"
-       id="text1034"><tspan
-         id="tspan1032"
-         sodipodi:role="line"
-         x="-293.63153"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\Banner.png"
+       id="g1047">
+      <rect
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect1026"
+         width="254"
+         height="32.072346"
+         x="-440.26666"
+         y="338.66666"
+         ry="9.9718693e-07" />
+      <text
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+         transform="scale(0.99602388,1.003992)"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:28.2652px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#ef233c;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="-438.06503"
+         y="363.43869"
+         id="text1030"><tspan
+           id="tspan1028"
+           sodipodi:role="line"
+           x="-438.06503"
+           y="363.43869"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:28.2652px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ef233c;fill-opacity:1;stroke-width:0.264583">The Downside</tspan></text>
+      <rect
+         ry="9.9718693e-07"
+         y="338.66666"
+         x="-300.03751"
+         height="32.072346"
+         width="113.77084"
+         id="rect1036"
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+         ry="2.2071126e-06"
+         y="338.66324"
+         x="-302.56589"
+         height="32.214939"
+         width="5.2137094"
+         id="rect1038"
+         style="fill:#ef233c;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+      <text
+         id="text1034"
          y="358.02963"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:15.3862px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#edf2f4;fill-opacity:1;stroke-width:0.264583">Made by MrBundles</tspan></text>
+         x="-293.63153"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:15.3862px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#edf2f4;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         xml:space="preserve"
+         transform="scale(0.99602387,1.003992)"
+         inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:15.3862px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#edf2f4;fill-opacity:1;stroke-width:0.264583"
+           y="358.02963"
+           x="-293.63153"
+           sodipodi:role="line"
+           id="tspan1032">Made by MrBundles</tspan></text>
+    </g>
   </g>
 </svg>

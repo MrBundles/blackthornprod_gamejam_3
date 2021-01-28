@@ -24,3 +24,5 @@ signal save_time
 #audio signals
 signal change_bus_mute
 signal change_bus_volume
+
+signal toggle_hardcore_mode

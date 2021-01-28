@@ -17,12 +17,13 @@ func _ready():
 
 func _on_waypoint_collected():
 	waypoint_count -= 1
-	print(init_waypoint_count)
 	waypoint_check()
 
 
 func _on_despawn_player(despawn_condition):
 	waypoint_count = init_waypoint_count
+	yield(get_tree().create_timer(1.0),"timeout")
+	waypoint_check()
 
 
 func waypoint_check():

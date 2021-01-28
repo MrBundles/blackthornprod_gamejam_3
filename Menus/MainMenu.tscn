@@ -159,3 +159,19 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HardcoreLabel" type="Label" parent="."]
+margin_left = 784.253
+margin_top = -18.8184
+margin_right = 1284.26
+margin_bottom = 262.182
+rect_rotation = 20.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.137255, 0.937255, 0.470588, 1 )
+text = "Hardcore Mode
+ Unlocked"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

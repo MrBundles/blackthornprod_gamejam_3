@@ -5,6 +5,7 @@ enum TRANSITIONS {Left=-1, Right=1}
 
 #variables
 export(Array, PackedScene) var game_scene_array = []
+export(Array, PackedScene) var hardcore_game_scene_array = []
 export(PackedScene) var menu_level_select
 export(PackedScene) var menu_settings
 export(PackedScene) var menu_credits
@@ -14,6 +15,7 @@ export(PackedScene) var menu_empty
 
 var current_level_id = 0
 var highest_unlocked_level_id = 1
+var hardcore_highest_unlocked_level_id = 1
 
 #rng
 var rng = RandomNumberGenerator.new()
@@ -31,16 +33,23 @@ func _ready():
 	GlobalSignalManager.connect("resume_scene", self, "_on_resume_scene")
 	GlobalSignalManager.connect("despawn_player", self, "_on_despawn_player")
 	GlobalSignalManager.connect("save_time", self, "_on_save_time")
+	GlobalSignalManager.connect("toggle_hardcore_mode", self, "_on_toggle_hardcore_mode")
 	
-	#initialize speedrun time array
+	#initialize speedrun time arrays
 	for i in range(game_scene_array.size()):
 		GlobalVariableManager.speedrun_times.append([900000])
 	GlobalVariableManager.speedrun_times[0][0] = 0
 	GlobalVariableManager.speedrun_times[16][0] = 0
+	
+	for i in range(hardcore_game_scene_array.size()):
+		GlobalVariableManager.hardcore_speedrun_times.append([900000])
+	GlobalVariableManager.hardcore_speedrun_times[0][0] = 0
+	GlobalVariableManager.hardcore_speedrun_times[16][0] = 0
 
 
 func _process(delta):
 	GlobalVariableManager.highest_unlocked_level_id = highest_unlocked_level_id
+	GlobalVariableManager.hardcore_highest_unlocked_level_id = hardcore_highest_unlocked_level_id
 	GlobalVariableManager.current_level_id = current_level_id
 	GlobalVariableManager.menu_scene_transitioning = $MenuSceneTween.is_active()
 	GlobalVariableManager.game_scene_transitioning = $GameSceneTween.is_active()
@@ -48,13 +57,22 @@ func _process(delta):
 	#check for speedrun mode
 	if highest_unlocked_level_id >= game_scene_array.size() - 1:
 		GlobalVariableManager.speedrun_mode = true
+	
+	#check for hardcore mode
+	if not GlobalVariableManager.hardcore_mode_unlocked and GlobalVariableManager.best_summed_time < 300000:
+		GlobalVariableManager.hardcore_mode_unlocked = true
 
 
 func change_game_scene(level_id:int, transition:int):	
 	if level_id < game_scene_array.size():
 		current_level_id = level_id
-		if current_level_id > highest_unlocked_level_id:
-			highest_unlocked_level_id = current_level_id
+		
+		if GlobalVariableManager.hardcore_mode:
+			if current_level_id > hardcore_highest_unlocked_level_id:
+				hardcore_highest_unlocked_level_id = current_level_id
+		else:
+			if current_level_id > highest_unlocked_level_id:
+				highest_unlocked_level_id = current_level_id
 			
 		var tween_duration = .75
 		var tween_transition = Tween.TRANS_CUBIC
@@ -63,7 +81,12 @@ func change_game_scene(level_id:int, transition:int):
 		var onscreen_scene
 		var offscreen_scene
 		
-		var new_game_scene_instance = game_scene_array[level_id].instance()
+		var new_game_scene_instance
+		if GlobalVariableManager.hardcore_mode:
+			new_game_scene_instance = hardcore_game_scene_array[level_id].instance()
+		else:
+			new_game_scene_instance = game_scene_array[level_id].instance()
+			
 		new_game_scene_instance.global_position.x = (get_viewport_rect().size.x + 64) * -transition
 		$GameScenes.add_child(new_game_scene_instance)
 		$GameScenes.move_child(new_game_scene_instance, 1)
@@ -185,6 +208,14 @@ func _on_despawn_player(despawn_condition):
 
 
 func _on_save_time(elapsed_msec):
-	GlobalVariableManager.speedrun_times[current_level_id-1].append(elapsed_msec)
-	GlobalVariableManager.speedrun_times[current_level_id-1].sort()
-	print(GlobalVariableManager.speedrun_times)
+	if GlobalVariableManager.hardcore_mode:
+		GlobalVariableManager.hardcore_speedrun_times[current_level_id-1].append(elapsed_msec)
+		GlobalVariableManager.hardcore_speedrun_times[current_level_id-1].sort()
+	else:
+		GlobalVariableManager.speedrun_times[current_level_id-1].append(elapsed_msec)
+		GlobalVariableManager.speedrun_times[current_level_id-1].sort()
+
+
+func _on_toggle_hardcore_mode():
+	GlobalVariableManager.hardcore_mode = !GlobalVariableManager.hardcore_mode
+	

@@ -2,19 +2,32 @@ extends MyMenuButton
 
 #variables
 export var level_id = 0 setget set_level_id
+export var hardcore_color_border = Color8(255,255,255,255)
 
 
-func _ready():
+func _ready():	
 	self.level_id = level_id
 	$ColorRect.modulate = Color(1,1,1,0)
 
 
 func _process(delta):
-	disabled = GlobalVariableManager.highest_unlocked_level_id < level_id
+	if GlobalVariableManager.hardcore_mode:
+		$BorderSprite.modulate = hardcore_color_border
+		disabled = GlobalVariableManager.hardcore_highest_unlocked_level_id < level_id
+	else:
+		$BorderSprite.modulate = color_border
+		disabled = GlobalVariableManager.highest_unlocked_level_id < level_id
+	
 	$ColorRect.visible = GlobalVariableManager.speedrun_mode
 	
 	if GlobalVariableManager.speedrun_times.size() >= level_id and GlobalVariableManager.speedrun_mode:
-		var elapsed_msec = GlobalVariableManager.speedrun_times[level_id][0]
+		var elapsed_msec
+		
+		if GlobalVariableManager.hardcore_mode:
+			elapsed_msec = GlobalVariableManager.hardcore_speedrun_times[level_id][0]
+		else:
+			elapsed_msec = GlobalVariableManager.speedrun_times[level_id][0]
+			
 		var elapsed_sec = elapsed_msec / 1000
 		elapsed_msec = elapsed_msec - (elapsed_sec * 1000)
 		var elapsed_min = elapsed_sec / 60

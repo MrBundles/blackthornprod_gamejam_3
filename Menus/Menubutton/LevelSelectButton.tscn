@@ -53,6 +53,7 @@ color_border = Color( 0.168627, 0.176471, 0.258824, 1 )
 border_width = 30
 border_width_grow = 50
 border_width_click = 60
+hardcore_color_border = Color( 0.137255, 0.937255, 0.470588, 1 )
 
 [node name="Tween" type="Tween" parent="."]
 
