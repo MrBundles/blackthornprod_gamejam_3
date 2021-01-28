@@ -10,6 +10,7 @@ var self_destructing = false
 func _on_GameScene_self_destruct():
 	self_destructing = true
 	var delay = .01
+	$UICanvasLayer.active = false
 	
 	get_node("Waypoints").queue_free()
 	

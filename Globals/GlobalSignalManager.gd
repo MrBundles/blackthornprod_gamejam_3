@@ -19,6 +19,7 @@ signal to_level
 #ui signals
 signal pause_scene
 signal resume_scene
+signal save_time
 
 #audio signals
 signal change_bus_mute

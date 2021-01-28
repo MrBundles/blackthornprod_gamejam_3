@@ -1,16 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Menus/Menubutton/MenuButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Menus/Menubutton/LevelSelectButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Fonts/agencyfb-boldcondensed.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Menus/LevelSelectMenu.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 3 )
+
 [node name="LevelSelectMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -29,7 +35,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 1166.0
+margin_bottom = 243.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
 margin_right = 1166.0
 margin_bottom = 167.0
 custom_fonts/font = SubResource( 1 )
@@ -38,10 +48,20 @@ text = "Level Select"
 align = 1
 valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 242.0
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_top = 171.0
 margin_right = 1166.0
-margin_bottom = 716.0
+margin_bottom = 243.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.937255, 0.137255, 0.235294, 1 )
+text = "Sum of Best Times: 99:99.999"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 318.0
+margin_right = 1166.0
+margin_bottom = 792.0
 alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
@@ -181,9 +201,9 @@ signal_name = "to_level"
 level_id = 16
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 791.0
+margin_top = 867.0
 margin_right = 1166.0
-margin_bottom = 872.0
+margin_bottom = 948.0
 alignment = 1
 
 [node name="BackButton" parent="VBoxContainer/HBoxContainer2" instance=ExtResource( 1 )]

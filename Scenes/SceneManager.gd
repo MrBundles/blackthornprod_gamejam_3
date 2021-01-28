@@ -13,7 +13,7 @@ export(PackedScene) var menu_pause
 export(PackedScene) var menu_empty
 
 var current_level_id = 0
-var highest_unlocked_level_id = 100
+var highest_unlocked_level_id = 15
 
 #rng
 var rng = RandomNumberGenerator.new()
@@ -30,6 +30,11 @@ func _ready():
 	GlobalSignalManager.connect("pause_scene", self, "_on_pause_scene")
 	GlobalSignalManager.connect("resume_scene", self, "_on_resume_scene")
 	GlobalSignalManager.connect("despawn_player", self, "_on_despawn_player")
+	GlobalSignalManager.connect("save_time", self, "_on_save_time")
+	
+	#initialize speedrun time array
+	for i in range(game_scene_array.size()):
+		GlobalVariableManager.speedrun_times.append([900000])
 
 
 func _process(delta):
@@ -37,6 +42,10 @@ func _process(delta):
 	GlobalVariableManager.current_level_id = current_level_id
 	GlobalVariableManager.menu_scene_transitioning = $MenuSceneTween.is_active()
 	GlobalVariableManager.game_scene_transitioning = $GameSceneTween.is_active()
+	
+	#check for speedrun mode
+	if highest_unlocked_level_id >= game_scene_array.size() - 1:
+		GlobalVariableManager.speedrun_mode = true
 
 
 func change_game_scene(level_id:int, transition:int):	
@@ -171,3 +180,9 @@ func _on_despawn_player(despawn_condition):
 			change_game_scene(current_level_id + 1, TRANSITIONS.Left)
 		else:
 			change_game_scene(current_level_id + 1, TRANSITIONS.Right)
+
+
+func _on_save_time(elapsed_msec):
+	GlobalVariableManager.speedrun_times[current_level_id-1].append(elapsed_msec)
+	GlobalVariableManager.speedrun_times[current_level_id-1].sort()
+	print(GlobalVariableManager.speedrun_times)

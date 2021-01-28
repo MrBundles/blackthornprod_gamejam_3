@@ -21,3 +21,4 @@ var current_level_id
 var highest_unlocked_level_id
 
 var speedrun_mode = false
+var speedrun_times = []
