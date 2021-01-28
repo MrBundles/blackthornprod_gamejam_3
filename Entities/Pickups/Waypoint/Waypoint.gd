@@ -6,6 +6,7 @@ var degrees_start = 0
 var degrees_end = 360
 var scale_start = Vector2(.5,.5)
 var scale_end = Vector2(.75,.75)
+var collected = false
 
 #rng
 var rng = RandomNumberGenerator.new()
@@ -54,9 +55,11 @@ func _on_Tween_tween_all_completed():
 
 
 func _on_Area2D_area_entered(area):
-	if area.is_in_group("player"):
+	if area.is_in_group("player") and not collected:
+		collected = true
 		$Sprites.hide()
 		$WaypointParticles.emitting = true
+		$WaypointPickup.play()
 		yield(get_tree().create_timer($WaypointParticles.lifetime), "timeout")
 		GlobalSignalManager.emit_signal("waypoint_collected")
 		queue_free()

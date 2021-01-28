@@ -67,4 +67,5 @@ func _on_MenuButton_button_up():
 
 
 func _on_MenuButton_pressed():
-	GlobalSignalManager.emit_signal(signal_name)
+	if not GlobalVariableManager.menu_scene_transitioning:
+		GlobalSignalManager.emit_signal(signal_name)

@@ -12,5 +12,3 @@ format = 1
 script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
-
-[node name="LevelTiles" type="Node2D" parent="."]

@@ -35,9 +35,11 @@ func _ready():
 func _process(delta):
 	GlobalVariableManager.highest_unlocked_level_id = highest_unlocked_level_id
 	GlobalVariableManager.current_level_id = current_level_id
+	GlobalVariableManager.menu_scene_transitioning = $MenuSceneTween.is_active()
+	GlobalVariableManager.game_scene_transitioning = $GameSceneTween.is_active()
 
 
-func change_game_scene(level_id:int, transition:int):
+func change_game_scene(level_id:int, transition:int):	
 	if level_id < game_scene_array.size():
 		current_level_id = level_id
 		if current_level_id > highest_unlocked_level_id:
@@ -53,6 +55,7 @@ func change_game_scene(level_id:int, transition:int):
 		var new_game_scene_instance = game_scene_array[level_id].instance()
 		new_game_scene_instance.global_position.x = (get_viewport_rect().size.x + 64) * -transition
 		$GameScenes.add_child(new_game_scene_instance)
+		$GameScenes.move_child(new_game_scene_instance, 1)
 		
 		onscreen_scene = $GameScenes.get_child(0)
 		offscreen_scene = $GameScenes.get_child(1)
@@ -66,13 +69,17 @@ func change_game_scene(level_id:int, transition:int):
 		tween_duration, tween_transition, tween_easing, tween_delay)
 		
 		$GameSceneTween.start()
+		play_game_scene_transition_sound()
 		
 		yield($GameSceneTween, "tween_all_completed")
-		$GameScenes.get_child(0).queue_free()
 		GlobalSignalManager.emit_signal("level_in_place")
+		if $GameScenes.get_child(0).has_node("Player"):
+			$GameScenes.get_child(0).get_node("Player").queue_free()
+		$GameScenes.move_child($GameScenes.get_child(0), $GameScenes.get_child_count())
+		$GameScenes.get_child($GameScenes.get_child_count()-1).emit_signal("self_destruct")
 
 
-func change_menu_scene(new_menu_scene:PackedScene, transition:int):
+func change_menu_scene(new_menu_scene:PackedScene, transition:int):	
 	var tween_duration = .75
 	var tween_transition = Tween.TRANS_BACK
 	var tween_easing = Tween.EASE_OUT
@@ -96,9 +103,27 @@ func change_menu_scene(new_menu_scene:PackedScene, transition:int):
 	tween_duration, tween_transition, tween_easing, tween_delay)
 	
 	$MenuSceneTween.start()
+	play_menu_scene_transition_sound()
 	
 	yield($MenuSceneTween, "tween_all_completed")
 	$MenuScenes.get_child(0).queue_free()
+
+
+
+func play_game_scene_transition_sound():
+	var pitch_scale_range = .2
+	
+	rng.randomize()
+	$GameSceneTransition.pitch_scale = 1 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
+	$GameSceneTransition.play()
+
+
+func play_menu_scene_transition_sound():
+	var pitch_scale_range = .2
+	
+	rng.randomize()
+	$MenuSceneTransition.pitch_scale = 1 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
+	$MenuSceneTransition.play()
 
 
 func _on_to_level_select():
@@ -146,5 +171,3 @@ func _on_despawn_player(despawn_condition):
 			change_game_scene(current_level_id + 1, TRANSITIONS.Left)
 		else:
 			change_game_scene(current_level_id + 1, TRANSITIONS.Right)
-
-

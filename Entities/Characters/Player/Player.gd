@@ -23,11 +23,16 @@ var flipped = 1		#1 = not flipped, -1 = flipped
 var all_waypoints_collected = false
 var mouse_present = false
 
+#rng
+var rng = RandomNumberGenerator.new()
+
+
 func _ready():
 	#connect signals
 	GlobalSignalManager.connect("flip_world", self, "_on_flip_world")
 	GlobalSignalManager.connect("dig_tile", self, "_on_dig_tile")
 	GlobalSignalManager.connect("despawn_player", self, "spawn")
+	GlobalSignalManager.connect("waypoint_collected", self, "_on_waypoint_collected")
 	GlobalSignalManager.connect("all_waypoints_collected", self, "_on_all_waypoints_collected")
 	GlobalSignalManager.connect("level_in_place", self, "_on_level_in_place")
 	
@@ -40,6 +45,8 @@ func _ready():
 	$PlayerSprite.scale = Vector2(0,0)
 	$CPUParticles2D.scale = Vector2(0,0)
 	$PauseLabel.modulate = Color8(255,255,255,0)
+	$PortalActivate.volume_db = -80
+	$PortalHum.volume_db = 0
 	
 
 
@@ -70,6 +77,7 @@ func spawn(despawn_condition):
 		)
 
 		$Tween.start()
+		$PlayerSpawn.play()
 		
 		yield($Tween, "tween_all_completed")
 		$CPUParticles2D.emitting = false
@@ -98,15 +106,25 @@ func despawn(despawn_condition):
 	)
 
 	$Tween.start()
+	if despawn_condition == GlobalVariableManager.DESPAWN_CONDITIONS.Bad:
+		play_despawn_sound()
+	else:
+		$PlayerDespawnGood.play()
 	
 	yield($Tween, "tween_all_completed")
 	gravity = init_gravity
-	
 	GlobalSignalManager.emit_signal("despawn_player", despawn_condition)
+
+
+func _on_waypoint_collected():
+	$PortalActivate.volume_db = -25
+	$PortalHum.volume_db = 0
 
 
 func _on_all_waypoints_collected():
 	all_waypoints_collected = true
+	$PortalActivate.play()
+	$PortalHum.play()
 
 
 func _on_level_in_place():
@@ -118,10 +136,10 @@ func _on_level_in_place():
 
 
 func _process(delta):
-	GlobalVariableManager.player_position = global_position
+	GlobalVariableManager.player_position = global_position + Vector2(32,32)
 	GlobalVariableManager.player_dig_count = dig_count
 	GlobalVariableManager.allow_tile_click = allow_tile_click
-	$CPUParticles2D.global_position = init_position
+	$CPUParticles2D.global_position = init_position + Vector2(32,32)
 	
 	$DigCountLabel.rect_rotation = $PlayerSprite.rotation_degrees
 	$DigCountLabel.rect_scale = $PlayerSprite.scale
@@ -134,29 +152,15 @@ func _on_flip_world(flip_tile_pos):
 	flipped *= -1
 	var previous_pos = global_position
 	
-	$Tween.interpolate_property(self, "global_position", global_position, flip_tile_pos, 
+	$Tween.interpolate_property(self, "global_position", global_position, flip_tile_pos - Vector2(32,32), 
 	GlobalVariableManager.tween_duration, 
 	GlobalVariableManager.tween_transition, 
 	GlobalVariableManager.tween_easing)
 	
-	$Tween.interpolate_property($Camera2D, "zoom:y", $Camera2D.zoom.y, -$Camera2D.zoom.y, 
-	GlobalVariableManager.tween_duration, 
-	GlobalVariableManager.tween_transition, 
-	GlobalVariableManager.tween_easing)
-	
-	$Tween.interpolate_property($Camera2D, "limit_top", $Camera2D.limit_top, $Camera2D.limit_bottom, 
-	GlobalVariableManager.tween_duration, 
-	GlobalVariableManager.tween_transition, 
-	GlobalVariableManager.tween_easing)
-
-	$Tween.interpolate_property($Camera2D, "limit_bottom", $Camera2D.limit_bottom, $Camera2D.limit_top, 
-	GlobalVariableManager.tween_duration, 
-	GlobalVariableManager.tween_transition, 
-	GlobalVariableManager.tween_easing)
 	
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
-	velocity = velocity_transition.rotated(previous_pos.angle_to_point(flip_tile_pos))
+	velocity = velocity_transition.rotated(previous_pos.angle_to_point(flip_tile_pos - Vector2(32,32)))
 
 
 func _on_dig_tile():
@@ -203,6 +207,7 @@ func get_input():
 			if Input.is_action_pressed("move_up") and not jump_flag:
 				velocity.y = clamp(-jump * flipped, -velocity_max.y, velocity_max.y)
 				jump_flag = true
+				play_jump_sound()
 			else:
 				velocity.y = 0
 		else:
@@ -235,8 +240,35 @@ func get_input():
 		despawn(GlobalVariableManager.DESPAWN_CONDITIONS.Restart)
 	
 	if Input.is_action_just_pressed("mouse_left_click") and mouse_present:
-		print(mouse_present)
 		GlobalSignalManager.emit_signal("pause_scene")
+		$PlayerClick.play()
+
+
+func play_jump_sound():
+	var pitch_scale_range = .2
+	
+	rng.randomize()
+	var rand = rng.randi_range(0,2)
+	$PlayerJumps.get_child(rand).pitch_scale = 1 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
+	$PlayerJumps.get_child(rand).play()
+	
+
+func play_land_sound():
+	var pitch_scale_range = .2
+	
+	rng.randomize()
+	var rand = rng.randi_range(0,2)
+	$PlayerLands.get_child(rand).pitch_scale = 1 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
+	$PlayerLands.get_child(rand).play()
+
+
+func play_despawn_sound():
+	var pitch_scale_range = .5
+	
+	rng.randomize()
+	var rand = rng.randi_range(0,2)
+	$PlayerDespawns.get_child(rand).pitch_scale = 1 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
+	$PlayerDespawns.get_child(rand).play()
 
 
 func mouse_in_area(mouse_pos):
@@ -254,6 +286,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_Area2D_mouse_entered():
 	if velocity == Vector2(0,0) and not $Tween.is_active():
+		$PlayerHoverOn.play()
 		mouse_present = true
 		$PauseTween.stop_all()
 		var tween_duration = .5
@@ -275,7 +308,10 @@ func _on_Area2D_mouse_entered():
 		$PauseTween.start()
 
 
-func _on_Area2D_mouse_exited():
+func _on_Area2D_mouse_exited(play_sound=true):
+	if velocity == Vector2(0,0) and not $Tween.is_active():
+		$PlayerHoverOff.play()
+	
 	mouse_present = false
 	$PauseTween.stop_all()
 	var tween_duration = .25

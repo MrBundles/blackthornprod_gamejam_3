@@ -16,6 +16,11 @@ var mouse_present = false setget set_mouse_present
 var player_present = false setget set_player_present
 export(Curve) var delay_curve = Curve.new()
 
+var is_visible_on_screen = false
+
+#rng
+var rng = RandomNumberGenerator.new()
+
 func _ready():
 	#connect signals
 	GlobalSignalManager.connect("flip_world", self, "_on_flip_world")
@@ -30,7 +35,7 @@ func _ready():
 
 
 func _on_flip_world(flip_tile_pos):
-	if tile_state == GlobalVariableManager.TILE_STATES.Active or tile_state == GlobalVariableManager.TILE_STATES.Inactive:
+	if is_visible_on_screen and tile_state == GlobalVariableManager.TILE_STATES.Active or tile_state == GlobalVariableManager.TILE_STATES.Inactive and not get_parent().get_parent().self_destructing:
 		var max_distance = Vector2.ZERO.distance_to(get_viewport().get_visible_rect().size)
 		var delay = delay_curve.interpolate((global_position + offset).distance_to(flip_tile_pos) / max_distance)
 		yield(get_tree().create_timer(delay), "timeout")
@@ -42,7 +47,7 @@ func _on_flip_world(flip_tile_pos):
 
 
 func _on_despawn_player(despawn_condition):
-	if despawn_condition == GlobalVariableManager.DESPAWN_CONDITIONS.Bad or despawn_condition == GlobalVariableManager.DESPAWN_CONDITIONS.Good:
+	if is_visible_on_screen and despawn_condition == GlobalVariableManager.DESPAWN_CONDITIONS.Bad or despawn_condition == GlobalVariableManager.DESPAWN_CONDITIONS.Good:
 		var max_distance = Vector2.ZERO.distance_to(get_viewport().get_visible_rect().size)
 		var delay = delay_curve.interpolate((global_position + offset).distance_to(GlobalVariableManager.player_position) / max_distance)
 		yield(get_tree().create_timer(delay), "timeout")
@@ -55,9 +60,10 @@ func _on_all_waypoints_collected():
 
 
 func _process(delta):
-	self.mouse_present = mouse_in_tile(get_global_mouse_position())
-	self.player_present = player_in_range(GlobalVariableManager.player_position)
-	get_input()
+	if is_visible_on_screen:
+		self.mouse_present = mouse_in_tile(get_global_mouse_position())
+		self.player_present = player_in_range(GlobalVariableManager.player_position)
+		get_input()
 
 
 func mouse_in_tile(mouse_pos):
@@ -69,15 +75,28 @@ func player_in_range(player_pos):
 	return (global_position + offset).distance_to(player_pos) < min_player_distance
 
 
+func play_tile_detect_player_sound():
+	var pitch_scale_range = 15
+	
+	rng.randomize()
+	$TileDetectPlayer.pitch_scale = 25 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
+	$TileDetectPlayer.play()
+
+
 func get_input():
+	var pitch_scale_range = .2
 	if tile_state == GlobalVariableManager.TILE_STATES.Active and mouse_present and player_present and GlobalVariableManager.allow_tile_click:
-		if Input.is_action_just_pressed("mouse_left_click") and GlobalVariableManager.player_dig_count > 0:
+		if (Input.is_action_just_pressed("mouse_left_click") or (GlobalVariableManager.speedrun_mode and Input.is_action_pressed("mouse_left_click"))) and GlobalVariableManager.player_dig_count > 0:
 			self.tile_state = GlobalVariableManager.TILE_STATES.Inactive
 			$BreakParticles.emitting = true
 			GlobalSignalManager.emit_signal("dig_tile")
+			$TileDig.pitch_scale = 2 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
+			$TileDig.play()
 		
-		if Input.is_action_just_pressed("mouse_right_click"):
+		if Input.is_action_just_pressed("mouse_right_click") or (GlobalVariableManager.speedrun_mode and Input.is_action_pressed("mouse_right_click")):
 			GlobalSignalManager.emit_signal("flip_world", global_position + offset)
+			$TilesFlip.pitch_scale = 1 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
+			$TilesFlip.play()
 
 
 func set_tile_state(new_val):
@@ -110,10 +129,12 @@ func set_mouse_present(new_val):
 				$Tween.interpolate_property($CenterSprite, "scale", $CenterSprite.scale, Vector2(.65,.65),
 				.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT
 				)
+				play_tile_detect_player_sound()
 			else:
 				$Tween.interpolate_property($CenterSprite, "scale", $CenterSprite.scale, Vector2(.85,.85),
 				.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT
 				)
+				play_tile_detect_player_sound()
 		else:
 			$Tween.interpolate_property($CenterSprite, "scale", $CenterSprite.scale, Vector2(1,1),
 			.1, Tween.TRANS_BACK, Tween.EASE_IN
@@ -133,9 +154,18 @@ func set_player_present(new_val):
 			$Tween.interpolate_property($CenterSprite, "scale", $CenterSprite.scale, Vector2(.85,.85),
 			.5, Tween.TRANS_ELASTIC, Tween.EASE_OUT
 			)
+			play_tile_detect_player_sound()
 		else:
 			$Tween.interpolate_property($CenterSprite, "scale", $CenterSprite.scale, Vector2(1,1),
 			.1, Tween.TRANS_BACK, Tween.EASE_IN
 			)
 		
 		$Tween.start()
+
+
+func _on_VisibilityNotifier2D_screen_entered():
+	is_visible_on_screen = true
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	is_visible_on_screen = false

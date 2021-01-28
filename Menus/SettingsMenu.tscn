@@ -68,6 +68,7 @@ margin_right = 1166.0
 margin_bottom = 212.0
 bus_id = 2
 label = "Effects Volume"
+audio_sample = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 262.0

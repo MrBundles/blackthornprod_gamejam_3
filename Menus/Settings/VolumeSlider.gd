@@ -5,6 +5,7 @@ extends HBoxContainer
 export var bus_id = 0
 export var label = "Volume" setget set_label
 export var color_grabber = Color8(255,255,255,255)
+export var audio_sample = false
 
 
 func _ready():
@@ -21,6 +22,8 @@ func set_label(new_val):
 
 func _on_VolumeSlider_value_changed(value):
 	GlobalSignalManager.emit_signal("change_bus_volume", bus_id, value)
+	if audio_sample:
+		$SamplePlayer.play()
 
 
 func _on_MuteButton_toggled(button_pressed):

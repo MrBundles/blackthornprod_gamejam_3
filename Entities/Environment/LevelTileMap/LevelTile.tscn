@@ -1,8 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Entities/Environment/LevelTileMap/LevelTile.gd" type="Script" id=1]
 [ext_resource path="res://Entities/Environment/LevelTileMap/PureWhiteTile.png" type="Texture" id=2]
 [ext_resource path="res://Entities/Characters/Player/PlayerSprite.png" type="Texture" id=3]
+[ext_resource path="res://Resources/Audio/Effects/TileDetectPlayer1.wav" type="AudioStream" id=4]
+[ext_resource path="res://Resources/Audio/Effects/TileDetectMouse.wav" type="AudioStream" id=5]
+[ext_resource path="res://Resources/Audio/Effects/TileUndetectMouse.wav" type="AudioStream" id=6]
+[ext_resource path="res://Resources/Audio/Effects/TileDig.wav" type="AudioStream" id=7]
+[ext_resource path="res://Resources/Audio/Effects/TilesFlip.wav" type="AudioStream" id=8]
 
 [sub_resource type="Curve" id=1]
 resource_local_to_scene = true
@@ -85,3 +90,35 @@ scale_amount_random = 0.5
 scale_amount_curve = SubResource( 3 )
 color = Color( 0.137255, 0.937255, 0.470588, 1 )
 hue_variation_curve = SubResource( 4 )
+
+[node name="TileDetectMouse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -27.0
+bus = "Effects"
+
+[node name="TileUndetectMouse" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -27.0
+bus = "Effects"
+
+[node name="TileDetectPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+pitch_scale = 25.0
+bus = "Effects"
+
+[node name="TileDig" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -15.0
+pitch_scale = 2.0
+bus = "Effects"
+
+[node name="TilesFlip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -17.0
+bus = "Effects"
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( 0, 0, 64, 64 )
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
