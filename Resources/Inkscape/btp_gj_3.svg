@@ -5,6 +5,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    sodipodi:docname="btp_gj_3.svg"
@@ -15,9 +16,36 @@
    height="297mm"
    width="210mm">
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1736">
+      <stop
+         style="stop-color:#000000;stop-opacity:1"
+         offset="0"
+         id="stop1732" />
+      <stop
+         id="stop1740"
+         offset="0.5714286"
+         style="stop-color:#ef233c;stop-opacity:1" />
+      <stop
+         style="stop-color:#ffcaca;stop-opacity:1"
+         offset="1"
+         id="stop1734" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1736"
+       id="linearGradient1738"
+       x1="-235.34261"
+       y1="-6.9778047"
+       x2="-229.78842"
+       y2="155.23201"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(10.929738,-197.05425)" />
+  </defs>
   <sodipodi:namedview
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      inkscape:object-nodes="false"
      inkscape:bbox-nodes="true"
      inkscape:bbox-paths="false"
@@ -31,9 +59,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="-196.5919"
-     inkscape:cx="-571.785"
-     inkscape:zoom="0.70000001"
+     inkscape:cy="1239.9715"
+     inkscape:cx="-1162.5674"
+     inkscape:zoom="0.9899495"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -66,18 +94,26 @@
     <rect
        style="fill:#edf2f4;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
        id="rect907"
-       width="166.6875"
-       height="66.145836"
-       x="-321.73334"
-       y="-67.73333"
-       ry="7.9085606e-07" />
+       width="169.33333"
+       height="135.46666"
+       x="101.6"
+       y="-270.93332"
+       ry="1.6196732e-06"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       transform="scale(-1)" />
     <rect
-       ry="7.9085606e-07"
-       y="-133.87917"
-       x="-321.73334"
-       height="66.145836"
-       width="166.6875"
-       id="rect905"
+       transform="scale(-1)"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       ry="1.6196732e-06"
+       y="-270.93332"
+       x="101.6"
+       height="135.46666"
+       width="51.467468"
+       id="rect1012"
        style="fill:#2b2d42;fill-opacity:1;stroke:none;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
     <rect
        inkscape:export-ydpi="96"
@@ -167,32 +203,824 @@
        width="15.610413"
        id="rect853"
        style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.32292;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4.4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
-    <text
-       id="text857"
-       y="-40.937016"
-       x="-284.64285"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:25.7347px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#2b2d42;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       xml:space="preserve"><tspan
-         id="tspan909"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:25.7347px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2b2d42;fill-opacity:1;stroke-width:0.264583"
-         y="-40.937016"
-         x="-284.64285"
-         sodipodi:role="line">A Game by </tspan><tspan
-         id="tspan913"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:25.7347px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2b2d42;fill-opacity:1;stroke-width:0.264583"
-         y="-8.7686405"
-         x="-284.64285"
-         sodipodi:role="line">MrBundles</tspan></text>
+    <rect
+       style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect903"
+       width="16.933332"
+       height="16.933332"
+       x="-423.33331"
+       y="33.866665"
+       ry="2.2270508e-06" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect863"
+       width="16.933332"
+       height="16.933332"
+       x="-423.33331"
+       y="-135.46666"
+       ry="2.2270508e-06" />
+    <g
+       id="g907">
+      <rect
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect881"
+         width="16.933332"
+         height="16.933332"
+         x="-423.33331"
+         y="-118.53333"
+         ry="2.2270508e-06" />
+      <rect
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect865"
+         width="15.239999"
+         height="15.239999"
+         x="-422.48663"
+         y="-117.68667"
+         ry="2.0043458e-06" />
+    </g>
+    <g
+       id="g911">
+      <rect
+         ry="2.2270508e-06"
+         y="-101.6"
+         x="-423.33331"
+         height="16.933332"
+         width="16.933332"
+         id="rect883"
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+      <rect
+         ry="1.7816407e-06"
+         y="-99.906662"
+         x="-421.63998"
+         height="13.546666"
+         width="13.546666"
+         id="rect867"
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+    </g>
+    <g
+       id="g915">
+      <rect
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect885"
+         width="16.933332"
+         height="16.933332"
+         x="-423.33331"
+         y="-84.666664"
+         ry="2.2270508e-06" />
+      <rect
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect869"
+         width="11.853333"
+         height="11.853333"
+         x="-420.7933"
+         y="-82.126663"
+         ry="1.5589355e-06" />
+    </g>
+    <g
+       id="g919">
+      <rect
+         ry="2.2270508e-06"
+         y="-67.73333"
+         x="-423.33331"
+         height="16.933332"
+         width="16.933332"
+         id="rect887"
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+      <rect
+         ry="1.3362305e-06"
+         y="-64.346664"
+         x="-419.94666"
+         height="10.16"
+         width="10.16"
+         id="rect871"
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+    </g>
+    <g
+       id="g923">
+      <rect
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect889"
+         width="16.933332"
+         height="16.933332"
+         x="-423.33331"
+         y="-50.799999"
+         ry="2.2270508e-06" />
+      <rect
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect873"
+         width="8.4666662"
+         height="8.4666662"
+         x="-419.09998"
+         y="-46.566666"
+         ry="1.1135254e-06" />
+    </g>
+    <g
+       id="g927">
+      <rect
+         ry="2.2270508e-06"
+         y="-33.866665"
+         x="-423.33331"
+         height="16.933332"
+         width="16.933332"
+         id="rect891"
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+      <rect
+         ry="8.9082033e-07"
+         y="-28.786665"
+         x="-418.25333"
+         height="6.7733331"
+         width="6.7733331"
+         id="rect875"
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+    </g>
+    <g
+       id="g931">
+      <rect
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect893"
+         width="16.933332"
+         height="16.933332"
+         x="-423.33331"
+         y="-16.933332"
+         ry="2.2270508e-06" />
+      <rect
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect877"
+         width="5.0799999"
+         height="5.0799999"
+         x="-417.40665"
+         y="-11.006666"
+         ry="6.6811526e-07" />
+    </g>
+    <g
+       id="g935">
+      <rect
+         ry="2.2270508e-06"
+         y="5.567627e-07"
+         x="-423.33331"
+         height="16.933332"
+         width="16.933332"
+         id="rect899"
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+      <rect
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect895"
+         width="3.3866665"
+         height="3.3866665"
+         x="-416.55997"
+         y="6.7733335"
+         ry="4.4541017e-07" />
+    </g>
+    <g
+       id="g1020">
+      <rect
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect1016"
+         width="16.933332"
+         height="16.933332"
+         x="-423.33331"
+         y="-101.6"
+         ry="2.2270508e-06" />
+      <rect
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect1018"
+         width="13.546666"
+         height="13.546666"
+         x="-421.63998"
+         y="-99.906662"
+         ry="1.7816407e-06" />
+    </g>
+    <g
+       transform="translate(-1.1454961e-5)"
+       id="g1176">
+      <rect
+         ry="2.2270508e-06"
+         y="16.933334"
+         x="-423.33331"
+         height="16.933332"
+         width="16.933332"
+         id="rect1172"
+         style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+      <rect
+         style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+         id="rect1174"
+         width="1.6933333"
+         height="1.6933333"
+         x="-415.71332"
+         y="24.553333"
+         ry="2.2270508e-07" />
+    </g>
+    <rect
+       ry="4.4541021e-06"
+       y="-297.81067"
+       x="-192.77492"
+       height="33.866669"
+       width="33.866665"
+       id="rect1400"
+       style="fill:#6d88b7;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="rotate(-26.638185)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect897"
+       width="1.6933333"
+       height="1.6933333"
+       x="160.01999"
+       y="-26.246675"
+       ry="2.2270508e-07"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1198"
+       width="3.3866665"
+       height="3.3866665"
+       x="159.17334"
+       y="-44.026669"
+       ry="4.4541017e-07"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1204"
+       width="1.6933333"
+       height="1.6933333"
+       x="176.95332"
+       y="-9.3133421"
+       ry="2.2270508e-07"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1210"
+       width="3.3866665"
+       height="3.3866665"
+       x="176.10667"
+       y="-27.09334"
+       ry="4.4541017e-07"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1216"
+       width="3.3866665"
+       height="3.3866665"
+       x="193.03999"
+       y="-10.160007"
+       ry="4.4541017e-07"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1222"
+       width="5.0799999"
+       height="5.0799999"
+       x="158.32666"
+       y="-61.806675"
+       ry="6.6811526e-07"
+       transform="scale(-1)" />
+    <rect
+       ry="6.6811526e-07"
+       y="-44.873341"
+       x="175.25999"
+       height="5.0799999"
+       width="5.0799999"
+       id="rect1228"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1234"
+       width="5.0799999"
+       height="5.0799999"
+       x="192.19331"
+       y="-27.940012"
+       ry="6.6811526e-07"
+       transform="scale(-1)" />
+    <rect
+       ry="6.6811526e-07"
+       y="-11.006671"
+       x="209.12666"
+       height="5.0799999"
+       width="5.0799999"
+       id="rect1240"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       ry="8.9082033e-07"
+       y="-79.58667"
+       x="157.47998"
+       height="6.7733331"
+       width="6.7733331"
+       id="rect1246"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1252"
+       width="6.7733331"
+       height="6.7733331"
+       x="191.34663"
+       y="-45.720005"
+       ry="8.9082033e-07"
+       transform="scale(-1)" />
+    <rect
+       ry="8.9082033e-07"
+       y="-28.786669"
+       x="208.27998"
+       height="6.7733331"
+       width="6.7733331"
+       id="rect1258"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1264"
+       width="6.7733331"
+       height="6.7733331"
+       x="225.21332"
+       y="-11.853343"
+       ry="8.9082033e-07"
+       transform="scale(-1)" />
+    <rect
+       ry="1.1135254e-06"
+       y="-46.566669"
+       x="207.43333"
+       height="8.4666662"
+       width="8.4666662"
+       id="rect1276"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1282"
+       width="8.4666662"
+       height="8.4666662"
+       x="224.36667"
+       y="-29.633326"
+       ry="1.1135254e-06"
+       transform="scale(-1)" />
+    <rect
+       ry="1.1135254e-06"
+       y="-12.700007"
+       x="241.29999"
+       height="8.4666662"
+       width="8.4666662"
+       id="rect1288"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       ry="1.3362305e-06"
+       y="-64.346664"
+       x="206.58665"
+       height="10.16"
+       width="10.16"
+       id="rect1294"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1300"
+       width="10.16"
+       height="10.16"
+       x="223.51999"
+       y="-47.413342"
+       ry="1.3362305e-06"
+       transform="scale(-1)" />
+    <rect
+       ry="1.3362305e-06"
+       y="-30.480013"
+       x="240.45331"
+       height="10.16"
+       width="10.16"
+       id="rect1306"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1312"
+       width="10.16"
+       height="10.16"
+       x="257.38666"
+       y="-13.546672"
+       ry="1.3362305e-06"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1318"
+       width="13.546666"
+       height="13.546666"
+       x="238.75998"
+       y="-66.040001"
+       ry="1.7816407e-06"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1324"
+       width="11.853333"
+       height="11.853333"
+       x="222.67334"
+       y="-65.193329"
+       ry="1.5589355e-06"
+       transform="scale(-1)" />
+    <rect
+       ry="1.5589355e-06"
+       y="-48.260006"
+       x="239.60666"
+       height="11.853333"
+       width="11.853333"
+       id="rect1330"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1336"
+       width="11.853333"
+       height="11.853333"
+       x="256.54001"
+       y="-31.32667"
+       ry="1.5589355e-06"
+       transform="scale(-1)" />
+    <rect
+       ry="1.5589355e-06"
+       y="-14.393336"
+       x="273.47336"
+       height="11.853333"
+       width="11.853333"
+       id="rect1342"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       ry="1.7816407e-06"
+       y="-49.10667"
+       x="255.69331"
+       height="13.546666"
+       width="13.546666"
+       id="rect1348"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1354"
+       width="13.546666"
+       height="13.546666"
+       x="272.62668"
+       y="-32.173344"
+       ry="1.7816407e-06"
+       transform="scale(-1)" />
+    <rect
+       ry="1.7816407e-06"
+       y="-15.239993"
+       x="289.56"
+       height="13.546666"
+       width="13.546666"
+       id="rect1360"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1378"
+       width="15.239999"
+       height="15.239999"
+       x="288.71335"
+       y="-33.02"
+       ry="2.0043458e-06"
+       transform="scale(-1)" />
+    <rect
+       ry="2.0043458e-06"
+       y="-16.086679"
+       x="305.6467"
+       height="15.239999"
+       width="15.239999"
+       id="rect1384"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       ry="1.7816407e-06"
+       y="-82.973335"
+       x="221.82666"
+       height="13.546666"
+       width="13.546666"
+       id="rect1420"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       ry="1.5589355e-06"
+       y="-82.126671"
+       x="205.74001"
+       height="11.853333"
+       width="11.853333"
+       id="rect1432"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       ry="1.3362305e-06"
+       y="-81.280006"
+       x="189.65331"
+       height="10.16"
+       width="10.16"
+       id="rect1444"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       ry="1.1135254e-06"
+       y="-80.433334"
+       x="173.56667"
+       height="8.4666662"
+       width="8.4666662"
+       id="rect1450"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1456"
+       width="6.7733331"
+       height="6.7733331"
+       x="174.41331"
+       y="-62.653339"
+       ry="8.9082033e-07"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1462"
+       width="8.4666662"
+       height="8.4666662"
+       x="190.49998"
+       y="-63.500004"
+       ry="1.1135254e-06"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1468"
+       width="8.4666662"
+       height="8.4666662"
+       x="156.63333"
+       y="-97.366669"
+       ry="1.1135254e-06"
+       transform="scale(-1)" />
+    <rect
+       ry="1.3362305e-06"
+       y="-115.14668"
+       x="155.78665"
+       height="10.16"
+       width="10.16"
+       id="rect1480"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1486"
+       width="11.853333"
+       height="11.853333"
+       x="188.80666"
+       y="-99.060005"
+       ry="1.5589355e-06"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1500"
+       width="15.239999"
+       height="15.239999"
+       x="305.6467"
+       y="-134.62001"
+       ry="2.0043458e-06"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1506"
+       width="13.546666"
+       height="13.546666"
+       x="289.56"
+       y="-133.77333"
+       ry="1.7816407e-06"
+       transform="scale(-1)" />
+    <rect
+       ry="1.7816407e-06"
+       y="-116.84"
+       x="306.49335"
+       height="13.546666"
+       width="13.546666"
+       id="rect1512"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1518"
+       width="11.853333"
+       height="11.853333"
+       x="273.47336"
+       y="-132.92667"
+       ry="1.5589355e-06"
+       transform="scale(-1)" />
+    <rect
+       ry="1.5589355e-06"
+       y="-115.99333"
+       x="290.40668"
+       height="11.853333"
+       width="11.853333"
+       id="rect1524"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1530"
+       width="11.853333"
+       height="11.853333"
+       x="307.34003"
+       y="-99.059998"
+       ry="1.5589355e-06"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1556"
+       width="10.16"
+       height="10.16"
+       x="189.65331"
+       y="-115.14668"
+       ry="1.3362305e-06"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1574"
+       width="11.853333"
+       height="11.853333"
+       x="171.87334"
+       y="-99.060005"
+       ry="1.5589355e-06"
+       transform="scale(-1)" />
     <text
        id="text849"
-       y="-66.718056"
-       x="-278.6857"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:65.673px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#edf2f4;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:65.673px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#edf2f4;fill-opacity:1;stroke-width:0.264583"
-         y="-66.718056"
-         x="-278.6857"
+       y="-108.1067"
+       x="-346.4501"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:49.2025px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:url(#linearGradient1738);fill-opacity:1;stroke:none;stroke-width:0.264584"
+       xml:space="preserve"
+       transform="matrix(0.61028108,0.48248656,-1.1692035,0.71422013,0,0)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:49.2025px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:url(#linearGradient1738);fill-opacity:1;stroke-width:0.264584"
+         y="-108.1067"
+         x="-346.4501"
          id="tspan847"
-         sodipodi:role="line">FLP</tspan></text>
+         sodipodi:role="line">The Downside</tspan></text>
+    <rect
+       ry="2.2270508e-06"
+       y="-114.3"
+       x="-103.56546"
+       height="16.933332"
+       width="16.933332"
+       id="rect1578"
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+    <text
+       transform="scale(0.99602388,1.003992)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:26.2475px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#23ef78;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="178.39282"
+       y="-47.381092"
+       id="text943"><tspan
+         sodipodi:role="line"
+         x="178.39282"
+         y="-47.381092"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:26.2475px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#23ef78;fill-opacity:1;stroke-width:0.264583"
+         id="tspan939">A Game by </tspan><tspan
+         sodipodi:role="line"
+         x="178.39282"
+         y="-14.571718"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:26.2475px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#23ef78;fill-opacity:1;stroke-width:0.264583"
+         id="tspan941">MrBundles</tspan></text>
+    <text
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       id="text857"
+       y="180.69592"
+       x="-216.23405"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:47.7445px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#ef233c;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       transform="scale(0.99602388,1.003992)"><tspan
+         id="tspan955"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:47.7445px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ef233c;fill-opacity:1;stroke-width:0.264583"
+         y="180.69592"
+         x="-216.23405"
+         sodipodi:role="line">The</tspan></text>
+    <text
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       transform="scale(0.99602388,1.003992)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:47.7445px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#ef233c;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-265.38788"
+       y="209.54239"
+       id="text961"><tspan
+         id="tspan963"
+         sodipodi:role="line"
+         x="-265.38788"
+         y="209.54239"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:47.7445px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ef233c;fill-opacity:1;stroke-width:0.264583">Downs de</tspan></text>
+    <rect
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       ry="9.2708942e-06"
+       y="135.59554"
+       x="-156.28911"
+       height="135.31764"
+       width="5.2137094"
+       id="rect978"
+       style="fill:#ef233c;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+    <text
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       id="text982"
+       y="258.16391"
+       x="-239.91006"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:47.7445px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#2b2d42;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       transform="scale(0.99602388,1.003992)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:30.8019px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2b2d42;fill-opacity:1;stroke-width:0.264583"
+         y="258.16391"
+         x="-239.91006"
+         sodipodi:role="line"
+         id="tspan980">MrBund  es</tspan></text>
+    <text
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       transform="scale(0.99602388,1.003992)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:26.4501px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#2b2d42;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-223.9613"
+       y="230.00737"
+       id="text990"><tspan
+         id="tspan988"
+         sodipodi:role="line"
+         x="-223.9613"
+         y="230.00737"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:17.0639px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#2b2d42;fill-opacity:1;stroke-width:0.264583">Made by</tspan></text>
+    <text
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       transform="scale(0.99602388,1.003992)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:47.7445px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#edf2f4;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-162.04935"
+       y="258.16391"
+       id="text1016"><tspan
+         id="tspan1014"
+         sodipodi:role="line"
+         x="-162.04935"
+         y="258.16391"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:30.8019px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#edf2f4;fill-opacity:1;stroke-width:0.264583">  es</tspan></text>
+    <rect
+       ry="9.9718693e-07"
+       y="338.66666"
+       x="-440.26666"
+       height="32.072346"
+       width="254"
+       id="rect1026"
+       style="fill:#edf2f4;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4" />
+    <text
+       id="text1030"
+       y="363.43869"
+       x="-438.06503"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:28.2652px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#ef233c;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       xml:space="preserve"
+       transform="scale(0.99602388,1.003992)"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:28.2652px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ef233c;fill-opacity:1;stroke-width:0.264583"
+         y="363.43869"
+         x="-438.06503"
+         sodipodi:role="line"
+         id="tspan1028">The Downside</tspan></text>
+    <rect
+       style="fill:#2b2d42;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1036"
+       width="113.77084"
+       height="32.072346"
+       x="-300.03751"
+       y="338.66666"
+       ry="9.9718693e-07" />
+    <rect
+       style="fill:#ef233c;fill-opacity:1;stroke-width:1.32292;stroke-linecap:square;stroke-miterlimit:4.4"
+       id="rect1038"
+       width="5.2137094"
+       height="32.214939"
+       x="-302.56589"
+       y="338.66324"
+       ry="2.2071126e-06"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="D:\Kevin\_Godot\Projects\Jam_Games\BlackThornProd\BTP_GJ_3\Resources\Itch\CoverImage.png"
+       transform="scale(0.99602387,1.003992)"
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:15.3862px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#edf2f4;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-293.63153"
+       y="358.02963"
+       id="text1034"><tspan
+         id="tspan1032"
+         sodipodi:role="line"
+         x="-293.63153"
+         y="358.02963"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-size:15.3862px;font-family:'Agency FB';-inkscape-font-specification:'Agency FB, Bold Condensed';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#edf2f4;fill-opacity:1;stroke-width:0.264583">Made by MrBundles</tspan></text>
   </g>
 </svg>

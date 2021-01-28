@@ -13,7 +13,7 @@ export(PackedScene) var menu_pause
 export(PackedScene) var menu_empty
 
 var current_level_id = 0
-var highest_unlocked_level_id = 15
+var highest_unlocked_level_id = 1
 
 #rng
 var rng = RandomNumberGenerator.new()
