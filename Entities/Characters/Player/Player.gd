@@ -5,7 +5,8 @@ export var color_player = Color8(0,0,0,255)
 export var color_pause = Color8(255,255,255,255)
 export var dig_count = 0
 var init_dig_count
-export var allow_tile_click = true
+export var allow_left_click = true
+export var allow_right_click = true
 
 var velocity = Vector2(0,0)
 export var velocity_transition = Vector2(-1000,0)
@@ -92,6 +93,8 @@ func despawn(despawn_condition):
 	$PlayerSprite.scale = Vector2(1,1)
 	gravity = 0
 	velocity = Vector2.ZERO
+	all_waypoints_collected = false
+	$PortalHum.playing = false
 	
 	var tween_duration = .25
 	var tween_transition = Tween.TRANS_CIRC
@@ -138,7 +141,8 @@ func _on_level_in_place():
 func _process(delta):
 	GlobalVariableManager.player_position = global_position + Vector2(32,32)
 	GlobalVariableManager.player_dig_count = dig_count
-	GlobalVariableManager.allow_tile_click = allow_tile_click
+	GlobalVariableManager.allow_left_click = allow_left_click
+	GlobalVariableManager.allow_right_click = allow_right_click
 	$CPUParticles2D.global_position = init_position + Vector2(32,32)
 	
 	$DigCountLabel.rect_rotation = $PlayerSprite.rotation_degrees
@@ -200,8 +204,8 @@ func get_input():
 					#snap player to grid if close to cell position
 					var global_position_map = $PlayerTileMap.map_to_world($PlayerTileMap.world_to_map(global_position))
 					var min_distance_to_snap = 16
-					if abs(global_position.x - global_position_map.x - 32) < min_distance_to_snap:
-						global_position.x = global_position_map.x + 32
+					if abs(global_position.x - global_position_map.x - 64) < min_distance_to_snap:
+						global_position.x = global_position_map.x + 64
 		
 		if (is_on_floor() and flipped == 1) or (is_on_ceiling() and flipped == -1):
 			if Input.is_action_pressed("move_up") and not jump_flag:
