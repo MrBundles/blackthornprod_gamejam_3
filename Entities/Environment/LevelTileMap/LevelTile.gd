@@ -87,14 +87,14 @@ func play_tile_detect_player_sound():
 func get_input():
 	var pitch_scale_range = .2
 	if tile_state == GlobalVariableManager.TILE_STATES.Active and mouse_present and player_present:
-		if (Input.is_action_just_pressed("mouse_left_click") or (GlobalVariableManager.speedrun_mode and Input.is_action_pressed("mouse_left_click"))) and GlobalVariableManager.player_dig_count > 0 and GlobalVariableManager.allow_left_click:
+		if (Input.is_action_just_pressed("mouse_right_click") or (GlobalVariableManager.speedrun_mode and Input.is_action_pressed("mouse_right_click"))) and GlobalVariableManager.player_dig_count > 0 and GlobalVariableManager.allow_left_click:
 			self.tile_state = GlobalVariableManager.TILE_STATES.Inactive
 			$BreakParticles.emitting = true
 			GlobalSignalManager.emit_signal("dig_tile")
 			$TileDig.pitch_scale = 2 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
 			$TileDig.play()
 		
-		if (Input.is_action_just_pressed("mouse_right_click") or (GlobalVariableManager.speedrun_mode and Input.is_action_pressed("mouse_right_click"))) and GlobalVariableManager.allow_right_click:
+		if (Input.is_action_just_pressed("mouse_left_click") or (GlobalVariableManager.speedrun_mode and Input.is_action_pressed("mouse_left_click"))) and GlobalVariableManager.allow_right_click:
 			GlobalSignalManager.emit_signal("flip_world", global_position + offset)
 			$TilesFlip.pitch_scale = 1 + rng.randf_range(-pitch_scale_range,pitch_scale_range)
 			$TilesFlip.play()

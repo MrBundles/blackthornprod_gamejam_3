@@ -29,8 +29,6 @@ func set_color(new_val):
 
 
 func _on_despawn_player(despawn_condition):
-	print($Sprites.scale)
-	print(modulate)
 	collected = false
 	tween_delay = 0.0
 	init_tween()

@@ -26,3 +26,4 @@ signal change_bus_mute
 signal change_bus_volume
 
 signal toggle_hardcore_mode
+signal toggle_practice_mode

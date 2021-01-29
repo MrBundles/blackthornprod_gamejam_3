@@ -23,7 +23,7 @@ margin_right = 1587.38
 margin_bottom = 381.615
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.937255, 0.137255, 0.235294, 1 )
-text = "Right Click Nearby Tiles to 
+text = "Click Nearby Tiles to 
 Turn Your World Upside Down"
 align = 1
 __meta__ = {

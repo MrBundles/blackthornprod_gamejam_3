@@ -34,6 +34,7 @@ func _ready():
 	GlobalSignalManager.connect("despawn_player", self, "_on_despawn_player")
 	GlobalSignalManager.connect("save_time", self, "_on_save_time")
 	GlobalSignalManager.connect("toggle_hardcore_mode", self, "_on_toggle_hardcore_mode")
+	GlobalSignalManager.connect("toggle_practice_mode", self, "_on_toggle_practice_mode")
 	
 	#initialize speedrun time arrays
 	for i in range(game_scene_array.size()):
@@ -218,4 +219,10 @@ func _on_save_time(elapsed_msec):
 
 func _on_toggle_hardcore_mode():
 	GlobalVariableManager.hardcore_mode = !GlobalVariableManager.hardcore_mode
+	
+
+func _on_toggle_practice_mode():
+	GlobalVariableManager.practice_mode = !GlobalVariableManager.practice_mode
+	if not GlobalVariableManager.practice_mode_used_once:
+		GlobalVariableManager.practice_mode_used_once = true
 	

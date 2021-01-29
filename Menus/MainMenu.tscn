@@ -140,7 +140,7 @@ margin_right = 1166.0
 margin_bottom = 139.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.168627, 0.176471, 0.258824, 1 )
-text = "Rev 6.0"
+text = "Rev 6.3"
 align = 1
 valign = 1
 

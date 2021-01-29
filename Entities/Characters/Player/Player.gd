@@ -23,6 +23,7 @@ var init_position = Vector2(0,0)
 var flipped = 1		#1 = not flipped, -1 = flipped
 var all_waypoints_collected = false
 var mouse_present = false
+var level_in_place = false
 
 #rng
 var rng = RandomNumberGenerator.new()
@@ -52,6 +53,7 @@ func _ready():
 
 
 func spawn(despawn_condition):
+	dig_count = init_dig_count
 	if despawn_condition != GlobalVariableManager.DESPAWN_CONDITIONS.Good:
 		self.flipped = 1
 		set_collision_layer_bit(0, false)
@@ -62,7 +64,6 @@ func spawn(despawn_condition):
 		gravity = 0
 		velocity = Vector2.ZERO
 		$CPUParticles2D.emitting = true
-		dig_count = init_dig_count
 		
 		var tween_duration = 1
 		var tween_delay = 0.0
@@ -136,6 +137,7 @@ func _on_level_in_place():
 	
 	spawn(GlobalVariableManager.DESPAWN_CONDITIONS.Init)
 	dig_count_check()
+	level_in_place = true
 
 
 func _process(delta):
@@ -183,7 +185,7 @@ func _physics_process(delta):
 
 
 func get_input():
-	if not $Tween.is_active():
+	if not $Tween.is_active() and level_in_place:
 		#if mouse is not present, return to non-paused state
 		if (velocity != Vector2(0,0)) and !mouse_in_area(get_global_mouse_position()):
 			_on_Area2D_mouse_exited()
@@ -282,7 +284,7 @@ func mouse_in_area(mouse_pos):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("tile"):
-		if body.tile_state == GlobalVariableManager.TILE_STATES.Bad:
+		if body.tile_state == GlobalVariableManager.TILE_STATES.Bad and not GlobalVariableManager.practice_mode:
 			despawn(GlobalVariableManager.DESPAWN_CONDITIONS.Bad)
 		if body.tile_state == GlobalVariableManager.TILE_STATES.Good and all_waypoints_collected:
 			despawn(GlobalVariableManager.DESPAWN_CONDITIONS.Good)

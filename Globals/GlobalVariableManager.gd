@@ -28,3 +28,6 @@ var best_summed_time = 900000
 var hardcore_best_summed_time = 900000
 var hardcore_mode = false
 var hardcore_mode_unlocked = false
+
+var practice_mode = false
+var practice_mode_used_once = false

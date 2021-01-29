@@ -9,7 +9,7 @@
 [ext_resource path="res://Resources/Fonts/agencyfb-boldcondensed.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
-size = 75
+size = 65
 font_data = ExtResource( 7 )
 
 [node name="GameScene" type="Node2D"]
@@ -18,10 +18,10 @@ script = ExtResource( 2 )
 [node name="UICanvasLayer" parent="." instance=ExtResource( 4 )]
 
 [node name="Label" type="Label" parent="UICanvasLayer"]
-margin_left = 905.056
-margin_top = 505.056
-margin_right = 1082.06
-margin_bottom = 589.056
+margin_left = 904.307
+margin_top = 510.3
+margin_right = 1081.31
+margin_bottom = 594.3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.168627, 0.176471, 0.258824, 1 )
 text = "No Touch"

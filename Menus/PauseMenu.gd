@@ -8,7 +8,4 @@ func _ready():
 
 func _process(delta):
 	$CanvasLayer.offset = rect_global_position
-
-
-func _on_resume_scene():
-	$CanvasLayer/ColorRect.hide()
+	$CanvasLayer2.offset = rect_global_position

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/UICanvasLayer/UICanvasLayer.gd" type="Script" id=1]
 [ext_resource path="res://Resources/Fonts/agencyfb-boldcondensed.ttf" type="DynamicFontData" id=2]
@@ -7,8 +7,14 @@
 size = 100
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 80
+font_data = ExtResource( 2 )
+
 [node name="UICanvasLayer" type="CanvasLayer"]
 script = ExtResource( 1 )
+normal_color = Color( 0.937255, 0.137255, 0.235294, 1 )
+practice_color = Color( 0.137255, 0.937255, 0.470588, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 77.0
@@ -79,3 +85,40 @@ margin_left = 227.0
 margin_right = 277.0
 margin_bottom = 112.0
 rect_min_size = Vector2( 50, 0 )
+
+[node name="PracticeModeReminder" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -450.0
+margin_right = 450.0
+margin_bottom = 126.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="PracticeModeReminder"]
+margin_right = 900.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PracticeModeReminder"]
+margin_top = 14.0
+margin_right = 900.0
+margin_bottom = 103.0
+alignment = 1
+
+[node name="PracticeLabel" type="Label" parent="PracticeModeReminder/HBoxContainer2"]
+margin_right = 900.0
+margin_bottom = 89.0
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Click on the Player to Enable Practice Mode"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="gui_input" from="PracticeModeReminder/HBoxContainer2/PracticeLabel" to="." method="_on_PracticeLabel_gui_input"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
