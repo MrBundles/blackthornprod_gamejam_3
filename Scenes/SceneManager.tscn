@@ -87,3 +87,4 @@ bus = "Effects"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 960, 512 )
 zoom = Vector2( 3, 3 )
+[connection signal="tween_all_completed" from="GameSceneTween" to="." method="_on_GameSceneTween_tween_all_completed"]

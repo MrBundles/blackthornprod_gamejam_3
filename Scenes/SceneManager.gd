@@ -39,11 +39,13 @@ func _ready():
 	#initialize speedrun time arrays
 	for i in range(game_scene_array.size()):
 		GlobalVariableManager.speedrun_times.append([900000])
+		
 	GlobalVariableManager.speedrun_times[0][0] = 0
 	GlobalVariableManager.speedrun_times[16][0] = 0
 	
 	for i in range(hardcore_game_scene_array.size()):
 		GlobalVariableManager.hardcore_speedrun_times.append([900000])
+		
 	GlobalVariableManager.hardcore_speedrun_times[0][0] = 0
 	GlobalVariableManager.hardcore_speedrun_times[16][0] = 0
 
@@ -105,13 +107,6 @@ func change_game_scene(level_id:int, transition:int):
 		
 		$GameSceneTween.start()
 		play_game_scene_transition_sound()
-		
-		yield($GameSceneTween, "tween_all_completed")
-		GlobalSignalManager.emit_signal("level_in_place")
-		if $GameScenes.get_child(0).has_node("Player"):
-			$GameScenes.get_child(0).get_node("Player").queue_free()
-		$GameScenes.move_child($GameScenes.get_child(0), $GameScenes.get_child_count())
-		$GameScenes.get_child($GameScenes.get_child_count()-1).emit_signal("self_destruct")
 
 
 func change_menu_scene(new_menu_scene:PackedScene, transition:int):	
@@ -225,4 +220,13 @@ func _on_toggle_practice_mode():
 	GlobalVariableManager.practice_mode = !GlobalVariableManager.practice_mode
 	if not GlobalVariableManager.practice_mode_used_once:
 		GlobalVariableManager.practice_mode_used_once = true
+
+
+func _on_GameSceneTween_tween_all_completed():
+	GlobalSignalManager.emit_signal("level_in_place")
 	
+	if $GameScenes.get_child(0).has_node("Player"):
+		$GameScenes.get_child(0).get_node("Player").queue_free()
+		
+	$GameScenes.move_child($GameScenes.get_child(0), $GameScenes.get_child_count())
+	$GameScenes.get_child($GameScenes.get_child_count()-1).emit_signal("self_destruct")

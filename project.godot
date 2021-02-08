@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://git_api.gdns"
+}, {
 "base": "Button",
 "class": "MyMenuButton",
 "language": "GDScript",
 "path": "res://Menus/Menubutton/MenuButton.gd"
 } ]
 _global_script_class_icons={
+"GitAPI": "",
 "MyMenuButton": ""
 }
 
@@ -26,7 +32,7 @@ config/icon="res://icon.png"
 
 [audio]
 
-output_latency.web=20
+output_latency.web=30
 
 [autoload]
 
@@ -34,14 +40,19 @@ GlobalColorManager="*res://Globals/GlobalColorManager.tscn"
 GlobalSignalManager="*res://Globals/GlobalSignalManager.tscn"
 GlobalVariableManager="*res://Globals/GlobalVariableManager.tscn"
 GlobalAudioManager="*res://Globals/GlobalAudioManager.tscn"
+AudioSync="*res://Globals/AudioSync.gd"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
-window/size/fullscreen=true
+window/vsync/use_vsync=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[gdnative]
+
+singletons=[ "res://git_api.gdnlib" ]
 
 [input]
 
